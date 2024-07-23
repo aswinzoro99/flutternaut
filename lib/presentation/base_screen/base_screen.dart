@@ -21,8 +21,8 @@ class _BaseScreenState extends State<BaseScreen> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       if (constraints.maxWidth < Config.responsiveTriggerWidth) {
-        return const Center(
-          child: Text('Only Available in DESKTOP!!!'),
+        return Center(
+          child: Text(context.loc.responsiveWindowMessage),
         );
       } else {
         return Scaffold(
@@ -35,14 +35,20 @@ class _BaseScreenState extends State<BaseScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Aswin.', style: context.textTheme.headlineSmall),
+                    Text(
+                      context.loc.homeScreenTitle,
+                      style: context.textTheme.headlineSmall,
+                    ),
                     const Spacer(),
-                    getNavigationRailItem(title: 'HOME', isSelected: true),
-                    getNavigationRailItem(title: 'ABOUT'),
-                    getNavigationRailItem(title: 'SERVICES'),
-                    getNavigationRailItem(title: 'WORKS'),
-                    getNavigationRailItem(title: 'BLOGS'),
-                    getNavigationRailItem(title: 'CONTACT'),
+                    getNavigationRailItem(
+                      title: context.loc.home,
+                      isSelected: true,
+                    ),
+                    getNavigationRailItem(title: context.loc.about),
+                    getNavigationRailItem(title: context.loc.services),
+                    getNavigationRailItem(title: context.loc.works),
+                    getNavigationRailItem(title: context.loc.blogs),
+                    getNavigationRailItem(title: context.loc.contact),
                     const Spacer(),
                     buildTrailing(),
                   ],
@@ -91,7 +97,7 @@ class _BaseScreenState extends State<BaseScreen> {
         buildSocial(Assets.linkedIn),
         SizedBox(height: bodyPadding),
         Text(
-          'Copyright ©2023 Aswin Ranjith. All right reserved.',
+          context.loc.copyrightDesc,
           style: context.textTheme.labelSmall,
         ),
       ],

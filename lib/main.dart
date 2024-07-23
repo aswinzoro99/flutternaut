@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutternaut_frontend_webapp/presentation/base_screen/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme.dart';
 import 'package:flutternaut_frontend_webapp/utils/locator.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'generated/l10n.dart';
 
 void main() {
   runApp(const FlutternautApp());
@@ -30,6 +33,16 @@ class _FlutternautAppState extends State<FlutternautApp> {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       themeMode: ThemeMode.light,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: {
+        ...S.delegate.supportedLocales,
+        ...S.delegate.supportedLocales,
+      },
       home: const BaseScreen(),
     );
   }

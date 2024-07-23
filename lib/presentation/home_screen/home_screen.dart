@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
@@ -45,11 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'MY NAME IS ',
+                    text: context.loc.myNameIs,
                     style: context.textTheme.displayLarge,
                   ),
                   TextSpan(
-                    text: 'ASWIN RANJITH...',
+                    text: context.loc.aswinRanjith,
                     style: context.textTheme.displayLarge!.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
@@ -62,18 +63,18 @@ class _HomeScreenState extends State<HomeScreen> {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Software Engineer',
+                    text: context.loc.softwareEngineer,
                     style: context.textTheme.headlineSmall!
                         .copyWith(color: primaryTextColor),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
                   TextSpan(
-                    text: 'based in',
+                    text: context.loc.basedIn,
                     style: TextStyle(fontSize: headlineSmall),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
                   TextSpan(
-                    text: 'India',
+                    text: context.loc.india,
                     style: context.textTheme.headlineSmall!
                         .copyWith(color: primaryTextColor),
                   ),
@@ -108,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Row(
         children: [
           Text(
-            'Let’s talk with me',
+            context.loc.letsTalkWithMe,
             style: context.textTheme.titleSmall,
           ),
           SizedBox(width: paddingRegular2),
@@ -124,9 +125,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Row buildContacts() {
     return Row(
       children: [
-        buildContactItem(Assets.phone, '+91 81292 48586'),
+        buildContactItem(Assets.phone, Config.mobNo),
         SizedBox(width: paddingMedium1),
-        buildContactItem(Assets.email, 'aswin1999ranjith@gmail.com'),
+        buildContactItem(Assets.email, Config.email),
       ],
     );
   }
