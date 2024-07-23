@@ -7,6 +7,9 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.4.3 <4.0.0'
 
+dependency_overrides:
+  google_fonts: 4.0.2
+
 dependencies:
   flutter:
     sdk: flutter
@@ -24,6 +27,34 @@ flutter:
 
   assets:
     - pubspec.yaml
+    - fonts/
     - assets/
     - assets/images/
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Black.ttf
+        - asset: fonts/Poppins-BlackItalic.ttf
+          weight: 900
+        - asset: fonts/Poppins-ExtraBold.ttf
+        - asset: fonts/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+        - asset: fonts/Poppins-Bold.ttf
+        - asset: fonts/Poppins-BoldItalic.ttf
+          weight: 700
+        - asset: fonts/Poppins-SemiBold.ttf
+        - asset: fonts/Poppins-SemiBoldItalic.ttf
+          weight: 600
+        - asset: fonts/Poppins-Medium.ttf
+        - asset: fonts/Poppins-MediumItalic.ttf
+          weight: 500
+        - asset: fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: fonts/Poppins-Light.ttf
+        - asset: fonts/Poppins-LightItalic.ttf
+          weight: 300
+        - asset: fonts/Poppins-ExtraLight.ttf
+        - asset: fonts/Poppins-ExtraLightItalic.ttf
+          weight: 200
+
   uses-material-design: true

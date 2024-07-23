@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import '../common/dimensions.dart';
 import 'light_theme_colors.dart';
 
-const String kFontFamily = 'Open sans';
+const String kFontFamily = 'Poppins';
 const double kLetterSpacing = 0.3;
 
 final ThemeData lightTheme = ThemeData(
+  fontFamily: kFontFamily,
   colorScheme: const ColorScheme.light(
     background: backgroundColor,
   ),
