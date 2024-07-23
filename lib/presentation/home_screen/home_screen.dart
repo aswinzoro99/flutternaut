@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Positioned(
-          top: context.maxHeight / 5,
+          top: context.maxHeight / 4.9,
           child: Image.asset(
             Assets.arc,
             height: 100,
@@ -107,12 +107,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Row(
         children: [
-          const Text(
+          Text(
             'Let’s talk with me',
-            style: TextStyle(
-              fontSize: 14,
-              color: secondaryTextColor,
-            ),
+            style: context.textTheme.titleSmall,
           ),
           SizedBox(width: paddingRegular2),
           Image.asset(
@@ -151,10 +148,8 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(width: paddingSmall1),
         Text(
           value,
-          style: const TextStyle(
-            fontSize: 14,
+          style: context.textTheme.titleSmall?.copyWith(
             color: primaryTextColor,
-            fontStyle: FontStyle.italic,
           ),
         )
       ],
