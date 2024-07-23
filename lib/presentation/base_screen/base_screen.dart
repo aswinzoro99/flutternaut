@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
@@ -19,7 +20,7 @@ class _BaseScreenState extends State<BaseScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth < 1300) {
+      if (constraints.maxWidth < Config.responsiveTriggerWidth) {
         return const Center(
           child: Text('Only Available in DESKTOP!!!'),
         );
@@ -142,7 +143,7 @@ class _BaseScreenState extends State<BaseScreen> {
           Container(
             width: dp2,
             color: Colors.black38,
-            height: 150,
+            height: dp150,
           )
         ],
       ),

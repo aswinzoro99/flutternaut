@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
           top: context.maxHeight / 4.9,
           child: Image.asset(
             Assets.arc,
-            height: 100,
+            height: dp100,
           ),
         ),
         Column(
@@ -67,9 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         .copyWith(color: primaryTextColor),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  const TextSpan(
+                  TextSpan(
                     text: 'based in',
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(fontSize: headlineSmall),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
                   TextSpan(
