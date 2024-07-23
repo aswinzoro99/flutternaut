@@ -14,14 +14,16 @@ dependencies:
   flutter:
     sdk: flutter
 
+  auto_route: 8.3.0
   cupertino_icons: 1.0.6
-  get_it: 7.7.0
   flutter_bloc: 8.1.4
   flutter_localizations:
     sdk: flutter
+  get_it: 7.7.0
   intl: any
 
 dev_dependencies:
+  auto_route_generator: 8.1.0
   flutter_test:
     sdk: flutter
 

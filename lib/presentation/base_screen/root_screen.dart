@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
@@ -7,14 +8,15 @@ import 'package:flutternaut_frontend_webapp/presentation/home_screen/home_screen
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
-class BaseScreen extends StatefulWidget {
-  const BaseScreen({super.key});
+@RoutePage()
+class RootScreen extends StatefulWidget {
+  const RootScreen({super.key});
 
   @override
-  State<StatefulWidget> createState() => _BaseScreenState();
+  State<StatefulWidget> createState() => _RootScreenState();
 }
 
-class _BaseScreenState extends State<BaseScreen> {
+class _RootScreenState extends State<RootScreen> {
   final socialList = Socials.values;
 
   @override
