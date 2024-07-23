@@ -17,48 +17,56 @@ class _BaseScreenState extends State<BaseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      body: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(paddingLarge1),
-            decoration: const BoxDecoration(color: secondaryColor),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Aswin.',
-                  style: TextStyle(
-                    color: secondaryTextColor,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    fontStyle: FontStyle.italic,
-                  ),
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth < 1300) {
+        return const Center(
+          child: Text('Only Available in DESKTOP!!!'),
+        );
+      } else {
+        return Scaffold(
+          backgroundColor: backgroundColor,
+          body: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(paddingLarge1),
+                decoration: const BoxDecoration(color: secondaryColor),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Aswin.',
+                      style: TextStyle(
+                        color: secondaryTextColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w900,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                    const Spacer(),
+                    getNavigationRailItem(title: 'HOME', isSelected: true),
+                    getNavigationRailItem(title: 'ABOUT'),
+                    getNavigationRailItem(title: 'SERVICES'),
+                    getNavigationRailItem(title: 'WORKS'),
+                    getNavigationRailItem(title: 'BLOGS'),
+                    getNavigationRailItem(title: 'CONTACT'),
+                    const Spacer(),
+                    buildTrailing(),
+                  ],
                 ),
-                const Spacer(),
-                getNavigationRailItem(title: 'HOME', isSelected: true),
-                getNavigationRailItem(title: 'ABOUT'),
-                getNavigationRailItem(title: 'SERVICES'),
-                getNavigationRailItem(title: 'WORKS'),
-                getNavigationRailItem(title: 'BLOGS'),
-                getNavigationRailItem(title: 'CONTACT'),
-                const Spacer(),
-                buildTrailing(),
-              ],
-            ),
+              ),
+              Expanded(
+                child: Row(
+                  children: [
+                    const Expanded(child: HomeScreen()),
+                    buildFooter(),
+                  ],
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: Row(
-              children: [
-                const Expanded(child: HomeScreen()),
-                buildFooter(),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+        );
+      }
+    });
   }
 
   Padding getNavigationRailItem({
