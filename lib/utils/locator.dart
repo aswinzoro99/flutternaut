@@ -5,5 +5,5 @@ final locate = GetIt.instance;
 
 // ignore: long-method
 Future<void> setupInjector() async {
-  locate.registerSingleton(AppRouter.new);
+  locate.registerSingleton(AppRouter());
 }
