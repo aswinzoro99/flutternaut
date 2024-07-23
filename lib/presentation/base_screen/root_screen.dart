@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
@@ -9,14 +10,14 @@ import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
 @RoutePage()
-class RootScreen extends StatefulWidget {
+class RootScreen extends BaseScreen {
   const RootScreen({super.key});
 
   @override
   State<StatefulWidget> createState() => _RootScreenState();
 }
 
-class _RootScreenState extends State<RootScreen> {
+class _RootScreenState extends BaseState<RootScreen> {
   final socialList = Socials.values;
 
   @override
