@@ -5,9 +5,10 @@ import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
-import 'package:flutternaut_frontend_webapp/presentation/home_screen/home_screen.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
+
+import '../home_screen/home_screen.dart';
 
 @RoutePage()
 class RootScreen extends BaseScreen {
