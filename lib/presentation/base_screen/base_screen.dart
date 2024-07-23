@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
+import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/presentation/home_screen/home_screen.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
@@ -33,15 +34,7 @@ class _BaseScreenState extends State<BaseScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Aswin.',
-                      style: TextStyle(
-                        color: secondaryTextColor,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w900,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
+                    Text('Aswin.', style: context.textTheme.headlineSmall),
                     const Spacer(),
                     getNavigationRailItem(title: 'HOME', isSelected: true),
                     getNavigationRailItem(title: 'ABOUT'),
@@ -81,12 +74,9 @@ class _BaseScreenState extends State<BaseScreen> {
       ),
       child: Text(
         title,
-        style: TextStyle(
-          color: secondaryTextColor,
-          fontSize: (isSelected ?? false) ? 14 : 12,
-          fontWeight: (isSelected ?? false) ? FontWeight.w800 : FontWeight.w300,
-        ),
-        textAlign: TextAlign.left,
+        style: (isSelected ?? false)
+            ? context.textTheme.labelLarge
+            : context.textTheme.labelMedium,
       ),
     );
   }
@@ -99,9 +89,9 @@ class _BaseScreenState extends State<BaseScreen> {
         buildSocial(Assets.github),
         buildSocial(Assets.linkedIn),
         SizedBox(height: bodyPadding),
-        const Text(
+        Text(
           'Copyright ©2023 Aswin Ranjith. All right reserved.',
-          style: TextStyle(color: secondaryTextColor, fontSize: 9),
+          style: context.textTheme.labelSmall,
         ),
       ],
     );

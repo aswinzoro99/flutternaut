@@ -42,14 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
-              text: const TextSpan(
+              text: TextSpan(
                 children: [
-                  TextSpan(text: 'MY NAME IS ', style: TextStyle(fontSize: 75)),
+                  TextSpan(
+                    text: 'MY NAME IS ',
+                    style: context.textTheme.displayLarge,
+                  ),
                   TextSpan(
                     text: 'ASWIN RANJITH...',
-                    style: TextStyle(
-                      fontSize: 75,
-                      fontWeight: FontWeight.bold,
+                    style: context.textTheme.displayLarge!.copyWith(
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ],
@@ -59,27 +61,21 @@ class _HomeScreenState extends State<HomeScreen> {
               textAlign: TextAlign.start,
               text: TextSpan(
                 children: [
-                  const TextSpan(
+                  TextSpan(
                     text: 'Software Engineer',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    ),
+                    style: context.textTheme.headlineSmall!
+                        .copyWith(color: primaryTextColor),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
                   const TextSpan(
                     text: 'based in',
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: 24),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  const TextSpan(
+                  TextSpan(
                     text: 'India',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    ),
+                    style: context.textTheme.headlineSmall!
+                        .copyWith(color: primaryTextColor),
                   ),
                 ],
               ),
