@@ -105,19 +105,69 @@ class _RootScreenState extends BaseState<RootScreen> {
                   );
                 },
               ),
-              Expanded(
-                child: Row(
-                  children: [
-                    const Expanded(child: HomeScreen()),
-                    buildFooter(),
-                  ],
-                ),
-              ),
+              buildBody(),
             ],
           ),
         );
       }
     });
+  }
+
+  Widget buildBody() {
+    return Expanded(
+      child: Row(
+        children: [
+          Expanded(
+            child: BlocBuilder<RootBloc, RootState>(
+              buildWhen: (previous, current) =>
+                  previous.selectedItem != current.selectedItem,
+              builder: (context, state) {
+                switch (state.selectedItem) {
+                  case NavbarType.home:
+                    return const HomeScreen();
+                  case NavbarType.about:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                  case NavbarType.services:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                  case NavbarType.works:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                  case NavbarType.blogs:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                  case NavbarType.contacts:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                }
+              },
+            ),
+          ),
+          buildFooter(),
+        ],
+      ),
+    );
   }
 
   InkWell getNavigationRailItem({

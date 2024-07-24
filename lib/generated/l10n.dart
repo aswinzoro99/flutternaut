@@ -199,6 +199,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Under Development`
+  String get underDevelopment {
+    return Intl.message(
+      'Under Development',
+      name: 'underDevelopment',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

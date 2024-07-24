@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "services": MessageLookupByLibrary.simpleMessage("SERVICES"),
         "softwareEngineer":
             MessageLookupByLibrary.simpleMessage("Software Engineer"),
+        "underDevelopment":
+            MessageLookupByLibrary.simpleMessage("Under Development"),
         "works": MessageLookupByLibrary.simpleMessage("WORKS")
       };
 }
