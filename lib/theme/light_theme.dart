@@ -48,7 +48,7 @@ final ThemeData lightTheme = ThemeData(
     ),
     headlineSmall: TextStyle(
       fontFamily: kFontFamily,
-      color: secondaryTextColor,
+      color: primaryTextColor,
       fontSize: headlineSmall,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.italic,

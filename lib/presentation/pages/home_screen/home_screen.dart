@@ -6,6 +6,8 @@ import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
+import '../widgets/user_details_widget.dart';
+
 class HomeScreen extends BaseScreen {
   const HomeScreen({super.key});
 
@@ -64,29 +66,7 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                 ],
               ),
             ),
-            RichText(
-              textAlign: TextAlign.start,
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: context.loc.softwareEngineer,
-                    style: context.textTheme.headlineSmall!
-                        .copyWith(color: primaryTextColor),
-                  ),
-                  WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  TextSpan(
-                    text: context.loc.basedIn,
-                    style: TextStyle(fontSize: headlineSmall),
-                  ),
-                  WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  TextSpan(
-                    text: context.loc.india,
-                    style: context.textTheme.headlineSmall!
-                        .copyWith(color: primaryTextColor),
-                  ),
-                ],
-              ),
-            ),
+            UserDetailsWidget(style: context.textTheme.headlineSmall!),
             SizedBox(height: paddingMedium1),
             buildTalkWIthMe(),
             SizedBox(height: paddingMedium1),

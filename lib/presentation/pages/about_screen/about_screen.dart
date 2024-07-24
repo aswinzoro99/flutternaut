@@ -3,10 +3,12 @@ import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/user_details_widget.dart';
 import 'package:universal_html/html.dart' as html;
 
 import '../../../theme/light_theme_colors.dart';
 import '../../../utils/assets.dart';
+import '../widgets/contact_widget.dart';
 
 class AboutScreen extends BaseScreen {
   const AboutScreen({super.key});
@@ -65,35 +67,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                       ),
                     ),
                     SizedBox(height: paddingSmall1),
-                    RichText(
-                      textAlign: TextAlign.start,
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: context.loc.softwareEngineer,
-                            style: context.textTheme.titleLarge!.copyWith(
-                              color: primaryTextColor,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ),
-                          WidgetSpan(child: SizedBox(width: paddingSmaller2)),
-                          TextSpan(
-                            text: context.loc.basedIn,
-                            style: TextStyle(fontSize: titleLarge),
-                          ),
-                          WidgetSpan(child: SizedBox(width: paddingSmaller2)),
-                          TextSpan(
-                            text: context.loc.india,
-                            style: context.textTheme.titleLarge!.copyWith(
-                              color: primaryTextColor,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    UserDetailsWidget(style: context.textTheme.titleLarge!),
                     SizedBox(height: paddingSmall1),
                     TextButton(
                       onPressed: () {
@@ -124,9 +98,198 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                   ],
                 ),
               ),
-              const Expanded(
+              Expanded(
                 flex: 3,
-                child: Column(),
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Expanded(
+                          child: ContactWidget(
+                            assetName: Assets.phone,
+                            value: Config.mobNo,
+                          ),
+                        ),
+                        SizedBox(width: paddingMedium1),
+                        const Expanded(
+                          child: ContactWidget(
+                            assetName: Assets.contact,
+                            value: Config.age,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: paddingLarge2),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Expanded(
+                          child: ContactWidget(
+                            assetName: Assets.email,
+                            value: Config.email,
+                          ),
+                        ),
+                        SizedBox(width: paddingMedium1),
+                        const Expanded(
+                          child: ContactWidget(
+                            assetName: Assets.location,
+                            value: Config.location,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: paddingLarge1),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(height: dp1, color: Colors.black12),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: paddingLarge1),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          const LinearGradient(
+                                        colors: [
+                                          Color(0xffbc6ce4),
+                                          Color(0xfffcb444)
+                                        ],
+                                      ).createShader(
+                                        Rect.fromLTWH(
+                                            0, 0, bounds.width, bounds.height),
+                                      ),
+                                      child: Text(
+                                        Config.experience,
+                                        style: context.textTheme.displaySmall,
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      context.loc.yearsExperience,
+                                      style: context.textTheme.titleLarge,
+                                      maxLines: 2,
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: paddingMedium1),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      context.loc.aboutScreenDesc1,
+                                      style: context.textTheme.bodySmall,
+                                      maxLines: 8,
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: paddingMedium1),
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          const LinearGradient(
+                                        colors: [
+                                          Color(0xffbc6ce4),
+                                          Color(0xfffcb444)
+                                        ],
+                                      ).createShader(
+                                        Rect.fromLTWH(
+                                            0, 0, bounds.width, bounds.height),
+                                      ),
+                                      child: Text(
+                                        Config.clientsCount,
+                                        style: context.textTheme.displaySmall,
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      context.loc.clientsInIndia,
+                                      style: context.textTheme.titleLarge,
+                                      maxLines: 2,
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: paddingMedium1),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      context.loc.aboutScreenDesc2,
+                                      style: context.textTheme.bodySmall,
+                                      maxLines: 10,
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: paddingMedium1),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.all(paddingMedium1),
+                            color: secondaryColor,
+                            height: dp120,
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  Assets.quotes,
+                                  height: iconSizeXXXL,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(width: paddingMedium1),
+                                Expanded(
+                                  child: Text(
+                                    context.loc.aboutScreenDesc3,
+                                    style:
+                                        context.textTheme.titleSmall!.copyWith(
+                                      fontStyle: FontStyle.italic,
+                                      color: secondaryTextColor,
+                                    ),
+                                    maxLines: 3,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

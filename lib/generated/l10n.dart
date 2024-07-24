@@ -50,36 +50,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Aswin.`
-  String get homeScreenTitle {
-    return Intl.message(
-      'Aswin.',
-      name: 'homeScreenTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Only Available in DESKTOP!!!`
-  String get responsiveWindowMessage {
-    return Intl.message(
-      'Only Available in DESKTOP!!!',
-      name: 'responsiveWindowMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `HOME`
-  String get home {
-    return Intl.message(
-      'HOME',
-      name: 'home',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `ABOUT`
   String get about {
     return Intl.message(
@@ -90,21 +60,51 @@ class S {
     );
   }
 
-  /// `SERVICES`
-  String get services {
+  /// `''Hello there! My name is Aswin Ranjith am a Software Engineer , and I'm very passionate and dedicated to my work.''`
+  String get aboutScreenDesc1 {
     return Intl.message(
-      'SERVICES',
-      name: 'services',
+      '\'\'Hello there! My name is Aswin Ranjith am a Software Engineer , and I\'m very passionate and dedicated to my work.\'\'',
+      name: 'aboutScreenDesc1',
       desc: '',
       args: [],
     );
   }
 
-  /// `WORKS`
-  String get works {
+  /// `''With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.''`
+  String get aboutScreenDesc2 {
     return Intl.message(
-      'WORKS',
-      name: 'works',
+      '\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'',
+      name: 'aboutScreenDesc2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”`
+  String get aboutScreenDesc3 {
+    return Intl.message(
+      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”',
+      name: 'aboutScreenDesc3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ASWIN RANJITH...`
+  String get aswinRanjith {
+    return Intl.message(
+      'ASWIN RANJITH...',
+      name: 'aswinRanjith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `based in`
+  String get basedIn {
+    return Intl.message(
+      'based in',
+      name: 'basedIn',
       desc: '',
       args: [],
     );
@@ -115,6 +115,16 @@ class S {
     return Intl.message(
       'BLOGS',
       name: 'blogs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clients in India...`
+  String get clientsInIndia {
+    return Intl.message(
+      'Clients in India...',
+      name: 'clientsInIndia',
       desc: '',
       args: [],
     );
@@ -140,41 +150,31 @@ class S {
     );
   }
 
-  /// `MY NAME IS`
-  String get myNameIs {
+  /// `Download CV`
+  String get downloadCv {
     return Intl.message(
-      'MY NAME IS',
-      name: 'myNameIs',
+      'Download CV',
+      name: 'downloadCv',
       desc: '',
       args: [],
     );
   }
 
-  /// `ASWIN RANJITH...`
-  String get aswinRanjith {
+  /// `HOME`
+  String get home {
     return Intl.message(
-      'ASWIN RANJITH...',
-      name: 'aswinRanjith',
+      'HOME',
+      name: 'home',
       desc: '',
       args: [],
     );
   }
 
-  /// `Software Engineer`
-  String get softwareEngineer {
+  /// `Aswin.`
+  String get homeScreenTitle {
     return Intl.message(
-      'Software Engineer',
-      name: 'softwareEngineer',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `based in`
-  String get basedIn {
-    return Intl.message(
-      'based in',
-      name: 'basedIn',
+      'Aswin.',
+      name: 'homeScreenTitle',
       desc: '',
       args: [],
     );
@@ -200,11 +200,11 @@ class S {
     );
   }
 
-  /// `Under Development`
-  String get underDevelopment {
+  /// `MY NAME IS`
+  String get myNameIs {
     return Intl.message(
-      'Under Development',
-      name: 'underDevelopment',
+      'MY NAME IS',
+      name: 'myNameIs',
       desc: '',
       args: [],
     );
@@ -220,6 +220,46 @@ class S {
     );
   }
 
+  /// `Only Available in DESKTOP!!!`
+  String get responsiveWindowMessage {
+    return Intl.message(
+      'Only Available in DESKTOP!!!',
+      name: 'responsiveWindowMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SERVICES`
+  String get services {
+    return Intl.message(
+      'SERVICES',
+      name: 'services',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Software Engineer`
+  String get softwareEngineer {
+    return Intl.message(
+      'Software Engineer',
+      name: 'softwareEngineer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Under Development`
+  String get underDevelopment {
+    return Intl.message(
+      'Under Development',
+      name: 'underDevelopment',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `WELCOME TO...`
   String get welcomeTo {
     return Intl.message(
@@ -230,11 +270,21 @@ class S {
     );
   }
 
-  /// `Download CV`
-  String get downloadCv {
+  /// `WORKS`
+  String get works {
     return Intl.message(
-      'Download CV',
-      name: 'downloadCv',
+      'WORKS',
+      name: 'works',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Years experience...`
+  String get yearsExperience {
+    return Intl.message(
+      'Years experience...',
+      name: 'yearsExperience',
       desc: '',
       args: [],
     );

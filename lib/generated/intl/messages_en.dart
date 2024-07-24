@@ -23,10 +23,18 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage("ABOUT"),
+        "aboutScreenDesc1": MessageLookupByLibrary.simpleMessage(
+            "\'\'Hello there! My name is Aswin Ranjith am a Software Engineer , and I\'m very passionate and dedicated to my work.\'\'"),
+        "aboutScreenDesc2": MessageLookupByLibrary.simpleMessage(
+            "\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'"),
+        "aboutScreenDesc3": MessageLookupByLibrary.simpleMessage(
+            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”"),
         "aswinRanjith":
             MessageLookupByLibrary.simpleMessage("ASWIN RANJITH..."),
         "basedIn": MessageLookupByLibrary.simpleMessage("based in"),
         "blogs": MessageLookupByLibrary.simpleMessage("BLOGS"),
+        "clientsInIndia":
+            MessageLookupByLibrary.simpleMessage("Clients in India..."),
         "contact": MessageLookupByLibrary.simpleMessage("CONTACT"),
         "copyrightDesc": MessageLookupByLibrary.simpleMessage(
             "Copyright ©2023 Aswin Ranjith. All right reserved."),
@@ -47,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "underDevelopment":
             MessageLookupByLibrary.simpleMessage("Under Development"),
         "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),
-        "works": MessageLookupByLibrary.simpleMessage("WORKS")
+        "works": MessageLookupByLibrary.simpleMessage("WORKS"),
+        "yearsExperience":
+            MessageLookupByLibrary.simpleMessage("Years experience...")
       };
 }
