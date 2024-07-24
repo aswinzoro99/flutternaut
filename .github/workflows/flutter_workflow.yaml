@@ -33,7 +33,6 @@ jobs:
         uses: actions/upload-artifact@v4.3.4
         with:
           name: web-build
-          path: build/web
 
   deploy:
     environment:
@@ -50,8 +49,7 @@ jobs:
         uses: actions/download-artifact@v4.1.8
         with:
           name: web-build
-          path: build/web
-
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5
