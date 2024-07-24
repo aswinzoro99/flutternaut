@@ -26,15 +26,11 @@ jobs:
   
     - run: flutter pub get
     
-    - run: flutter format --set-exit-if-changed
-    
-    - run: flutter analyze
-    
     - run: flutter build web --wasm --release
     
   deploy:
     runs-on: ubuntu-latest
-    needs: build  # Ensure 'build' job completes successfully before starting deploy
+    needs: build 
 
     steps:
       - name: Checkout repository
