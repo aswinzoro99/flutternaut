@@ -30,12 +30,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("CONTACT"),
         "copyrightDesc": MessageLookupByLibrary.simpleMessage(
             "Copyright ©2023 Aswin Ranjith. All right reserved."),
+        "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
         "home": MessageLookupByLibrary.simpleMessage("HOME"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Aswin."),
         "india": MessageLookupByLibrary.simpleMessage("India"),
         "letsTalkWithMe":
             MessageLookupByLibrary.simpleMessage("Let’s talk with me"),
         "myNameIs": MessageLookupByLibrary.simpleMessage("MY NAME IS"),
+        "niceToMeetYou":
+            MessageLookupByLibrary.simpleMessage("Nice to meet you!"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(
             "Only Available in DESKTOP!!!"),
         "services": MessageLookupByLibrary.simpleMessage("SERVICES"),
@@ -43,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Software Engineer"),
         "underDevelopment":
             MessageLookupByLibrary.simpleMessage("Under Development"),
+        "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),
         "works": MessageLookupByLibrary.simpleMessage("WORKS")
       };
 }

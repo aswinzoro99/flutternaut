@@ -1,18 +1,10 @@
+import '../common/config.dart';
 import '../utils/assets.dart';
 
 enum Socials {
-  instagram(
-    assetValue: Assets.instagram,
-    redirectionUrl: 'https://www.instagram.com/aswin_ranjith/',
-  ),
-  linkedIn(
-    assetValue: Assets.linkedIn,
-    redirectionUrl: 'https://www.linkedin.com/in/aswin-ranjith-dev',
-  ),
-  github(
-    assetValue: Assets.github,
-    redirectionUrl: 'https://github.com/aswinzoro99',
-  );
+  instagram(assetValue: Assets.instagram, redirectionUrl: Config.instagramLink),
+  linkedIn(assetValue: Assets.linkedIn, redirectionUrl: Config.linkedInLink),
+  github(assetValue: Assets.github, redirectionUrl: Config.githubLink);
 
   final String assetValue;
   final String redirectionUrl;

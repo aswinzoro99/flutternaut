@@ -31,6 +31,7 @@ final ThemeData lightTheme = ThemeData(
       fontFamily: kFontFamily,
       color: primaryTextColor,
       fontSize: displaySmall,
+      fontWeight: FontWeight.bold,
       letterSpacing: kLetterSpacing,
     ),
     headlineLarge: TextStyle(

@@ -209,6 +209,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Nice to meet you!`
+  String get niceToMeetYou {
+    return Intl.message(
+      'Nice to meet you!',
+      name: 'niceToMeetYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `WELCOME TO...`
+  String get welcomeTo {
+    return Intl.message(
+      'WELCOME TO...',
+      name: 'welcomeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download CV`
+  String get downloadCv {
+    return Intl.message(
+      'Download CV',
+      name: 'downloadCv',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
