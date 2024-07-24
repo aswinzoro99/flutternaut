@@ -13,7 +13,7 @@ final ThemeData lightTheme = ThemeData(
     surface: backgroundColor,
     primary: secondaryColor,
   ),
-  hoverColor: hoverColor,
+  hoverColor: secondaryColor,
   textTheme: TextTheme(
     displayLarge: TextStyle(
       fontFamily: kFontFamily,

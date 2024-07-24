@@ -209,9 +209,9 @@ class _RootScreenState extends BaseState<RootScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        buildSocial(Assets.instagram),
-        buildSocial(Assets.github),
-        buildSocial(Assets.linkedIn),
+        buildSocial(Socials.instagram),
+        buildSocial(Socials.github),
+        buildSocial(Socials.linkedIn),
         SizedBox(height: bodyPadding),
         Text(
           context.loc.copyrightDesc,
@@ -221,7 +221,8 @@ class _RootScreenState extends BaseState<RootScreen> {
     );
   }
 
-  Padding buildSocial(String asset) {
+  Padding buildSocial(Socials item) {
+    // TODO(Aswin): Add splash effect
     return Padding(
       padding: EdgeInsets.symmetric(vertical: paddingSmall1),
       child: Container(
@@ -230,7 +231,7 @@ class _RootScreenState extends BaseState<RootScreen> {
           color: backgroundColor,
           shape: BoxShape.circle,
         ),
-        child: buildIcon(asset, secondaryColor),
+        child: buildIcon(item.assetValue, secondaryColor),
       ),
     );
   }

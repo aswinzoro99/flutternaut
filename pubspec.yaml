@@ -22,6 +22,7 @@ dependencies:
     sdk: flutter
   get_it: 7.7.0
   intl: any
+  universal_html: 2.2.4
 
 dev_dependencies:
   auto_route_generator: 8.1.0
