@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
+import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends BaseScreen {
   const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends BaseState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,10 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Positioned(
-          top: context.maxHeight / 5,
+          top: context.maxHeight / 4.9,
           child: Image.asset(
             Assets.arc,
-            height: 100,
+            height: dp100,
           ),
         ),
         Column(
@@ -42,14 +44,16 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
-              text: const TextSpan(
+              text: TextSpan(
                 children: [
-                  TextSpan(text: 'MY NAME IS ', style: TextStyle(fontSize: 75)),
                   TextSpan(
-                    text: 'ASWIN RANJITH...',
-                    style: TextStyle(
-                      fontSize: 75,
-                      fontWeight: FontWeight.bold,
+                    text: context.loc.myNameIs,
+                    style: context.textTheme.displayLarge,
+                  ),
+                  TextSpan(
+                    text: context.loc.aswinRanjith,
+                    style: context.textTheme.displayLarge!.copyWith(
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ],
@@ -59,27 +63,21 @@ class _HomeScreenState extends State<HomeScreen> {
               textAlign: TextAlign.start,
               text: TextSpan(
                 children: [
-                  const TextSpan(
-                    text: 'Software Engineer',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    ),
+                  TextSpan(
+                    text: context.loc.softwareEngineer,
+                    style: context.textTheme.headlineSmall!
+                        .copyWith(color: primaryTextColor),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  const TextSpan(
-                    text: 'based in',
-                    style: TextStyle(fontSize: 30),
+                  TextSpan(
+                    text: context.loc.basedIn,
+                    style: TextStyle(fontSize: headlineSmall),
                   ),
                   WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  const TextSpan(
-                    text: 'India',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    ),
+                  TextSpan(
+                    text: context.loc.india,
+                    style: context.textTheme.headlineSmall!
+                        .copyWith(color: primaryTextColor),
                   ),
                 ],
               ),
@@ -111,12 +109,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Row(
         children: [
-          const Text(
-            'Let’s talk with me',
-            style: TextStyle(
-              fontSize: 14,
-              color: secondaryTextColor,
-            ),
+          Text(
+            context.loc.letsTalkWithMe,
+            style: context.textTheme.titleSmall,
           ),
           SizedBox(width: paddingRegular2),
           Image.asset(
@@ -131,9 +126,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Row buildContacts() {
     return Row(
       children: [
-        buildContactItem(Assets.phone, '+91 81292 48586'),
+        buildContactItem(Assets.phone, Config.mobNo),
         SizedBox(width: paddingMedium1),
-        buildContactItem(Assets.email, 'aswin1999ranjith@gmail.com'),
+        buildContactItem(Assets.email, Config.email),
       ],
     );
   }
@@ -155,10 +150,8 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(width: paddingSmall1),
         Text(
           value,
-          style: const TextStyle(
-            fontSize: 14,
+          style: context.textTheme.titleSmall?.copyWith(
             color: primaryTextColor,
-            fontStyle: FontStyle.italic,
           ),
         )
       ],

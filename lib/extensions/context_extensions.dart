@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
+
 extension ContextExtensions on BuildContext {
   double get maxWidth => MediaQuery.of(this).size.width;
 
@@ -10,4 +12,6 @@ extension ContextExtensions on BuildContext {
   Orientation get orientation => MediaQuery.of(this).orientation;
 
   TextTheme get textTheme => Theme.of(this).textTheme;
+
+  S get loc => S.of(this);
 }

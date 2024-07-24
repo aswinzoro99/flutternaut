@@ -1,4 +1,3 @@
-
 // Icons
 double get dialogIconSize => dp50;
 
@@ -64,7 +63,7 @@ double get paddingSmallest1 => dp3;
 double get paddingSmallest2 => dp2;
 
 // Text sizes
-double get displayLarge => 96;
+double get displayLarge => 75;
 
 double get displayMedium => 60;
 
@@ -135,6 +134,8 @@ double get dp300 => 300;
 double get dp220 => 220;
 
 double get dp160 => 160;
+
+double get dp150 => 150;
 
 double get dp135 => 135;
 
