@@ -36,6 +36,8 @@ jobs:
             channel: stable
       - run: flutter pub get
       - run: flutter build web --web-renderer canvaskit --release
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
       
   # Deployment job
   deploy:
