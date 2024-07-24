@@ -36,6 +36,11 @@ jobs:
             channel: stable
       - run: flutter pub get
       - run: flutter build web --web-renderer canvaskit --release
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
       
