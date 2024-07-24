@@ -183,11 +183,23 @@ class _RootScreenState extends BaseState<RootScreen> {
           bottom: paddingRegular1,
           right: paddingXXXL,
         ),
-        child: Text(
-          title,
-          style: (isSelected ?? false)
-              ? context.textTheme.labelLarge
-              : context.textTheme.labelMedium,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            if (isSelected ?? false)
+              Container(
+                color: Colors.amber,
+                height: dp2,
+                // TODO(Aswin): Remove hard coded values
+                width: dp50,
+              ),
+            Text(
+              title,
+              style: (isSelected ?? false)
+                  ? context.textTheme.labelLarge
+                  : context.textTheme.labelMedium,
+            ),
+          ],
         ),
       ),
     );
