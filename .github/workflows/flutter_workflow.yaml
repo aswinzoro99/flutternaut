@@ -56,5 +56,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4.0.5
         with:
-          branch: gh-pages
-          folder: build/web
+          artifact_name: web-build
