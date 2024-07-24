@@ -50,6 +50,11 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                     text: context.loc.myNameIs,
                     style: context.textTheme.displayLarge,
                   ),
+                  WidgetSpan(
+                    child: SizedBox(
+                      width: bodyPadding,
+                    ),
+                  ),
                   TextSpan(
                     text: context.loc.aswinRanjith,
                     style: context.textTheme.displayLarge!.copyWith(
