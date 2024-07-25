@@ -56,7 +56,7 @@ jobs:
         id: extract
         with:
           command: c
-          cwd: build/web
+          cwd: ./build/web
           files: webapp.tar.gz
           
       - name: Archive web artifact
