@@ -22,7 +22,7 @@ jobs:
   
     - run: flutter pub get
     
-    - run: flutter build web --wasm --release
+    - run: flutter build web --web-renderer canvaskit --release
     
   deploy:
     needs: build
@@ -39,11 +39,34 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.4
+      - name: Compress action step
+        uses: a7ul/tar-action@v1.1.0
+        id: compress
         with:
+          command: c
+          cwd: build/web
+          files: build/web
+          outPath: webapp.tar.gz
+          
+      - name: Extract files
+        uses: a7ul/tar-action@v1.1.0
+        id: extract
+        with:
+          command: c
+          cwd: build/web
+          files: webapp.tar.gz
+          
+      - name: Archive web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: webapp.tar.gz
           path: build/web
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
         
-      - name: Deploy to GitHub Pages
+      - name: Deploy GitHub Pages site
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: webapp.tar.gz
