@@ -5,25 +5,23 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Checkout repository
-      uses: actions/checkout@v4.1.7
-  
-    - uses: subosito/flutter-action@v2.16.0
-      with:
-        channel: 'stable'
-  
-    - run: flutter pub get
-    
-    - run: flutter build web --web-renderer canvaskit --release
-    
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - run: flutter pub get
+
+      - run: flutter build web --web-renderer canvaskit --release
+
   deploy:
     needs: build
 
@@ -35,11 +33,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
 
     runs-on: ubuntu-latest
     steps:
-      
       - name: Set up environment variables
         run: |
           echo "BUILD_REPOSITORY_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
@@ -48,10 +44,19 @@ jobs:
       - name: Create artifact staging directory
         run: mkdir -p ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}
 
+      - name: Debug - List files in build directory
+        run: ls -R build
+
+      - name: Check if build/web directory exists
+        id: check-web-dir
+        run: echo "exists=$(test -d build/web && echo yes || echo no)" >> $GITHUB_ENV
+
       - name: Archiving web app build
-        run: tar -czf ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}/${{ env.BUILD_REPOSITORY_NAME }}-web.tar.gz -C build/web
+        if: env.exists == 'yes'
+        run: tar -czf ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}/${{ env.BUILD_REPOSITORY_NAME }}-web.tar.gz -C build/web .
 
       - name: Upload artifact
+        if: env.exists == 'yes'
         uses: actions/upload-artifact@v2
         with:
           name: app-drop
