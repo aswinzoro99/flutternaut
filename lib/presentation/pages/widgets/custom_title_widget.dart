@@ -4,10 +4,14 @@ import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 class CustomTitleWidget extends StatelessWidget {
   final String title;
   final String subTitle;
+  final TextStyle? titleStyle;
+  final TextStyle? subTitleStyle;
 
   const CustomTitleWidget({
     required this.title,
     required this.subTitle,
+    this.titleStyle,
+    this.subTitleStyle,
     super.key,
   });
 
@@ -20,13 +24,17 @@ class CustomTitleWidget extends StatelessWidget {
           children: [
             Text(
               subTitle,
-              style: context.textTheme.titleLarge
-                  ?.copyWith(fontStyle: FontStyle.italic),
+              style: subTitleStyle ??
+                  context.textTheme.titleLarge?.copyWith(
+                    fontStyle: FontStyle.italic,
+                  ),
             ),
             Text(
               title,
-              style: context.textTheme.headlineLarge
-                  ?.copyWith(fontWeight: FontWeight.w600),
+              style: titleStyle ??
+                  context.textTheme.headlineLarge?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
           ],
         )

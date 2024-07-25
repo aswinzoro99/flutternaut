@@ -14,6 +14,7 @@ import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 import 'package:universal_html/html.dart' as html;
 
 import '../../../utils/locator.dart';
+import '../contacts_screen/contacts_screen.dart';
 import '../home_screen/home_screen.dart';
 import '../services_screen/services_screen.dart';
 
@@ -147,12 +148,7 @@ class _RootScreenState extends BaseState<RootScreen> {
                       ),
                     );
                   case NavbarType.contacts:
-                    return Center(
-                      child: Text(
-                        context.loc.underDevelopment,
-                        style: context.textTheme.bodyLarge,
-                      ),
-                    );
+                    return const ContactsScreen();
                 }
               },
             ),

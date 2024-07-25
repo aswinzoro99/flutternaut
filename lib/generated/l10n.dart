@@ -369,6 +369,46 @@ class S {
       args: [],
     );
   }
+
+  /// `REACH OUT ME`
+  String get reachOutMe {
+    return Intl.message(
+      'REACH OUT ME',
+      name: 'reachOutMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ANY PROJECT?`
+  String get anyProject {
+    return Intl.message(
+      'ANY PROJECT?',
+      name: 'anyProject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ATTACH FILES`
+  String get attachFiles {
+    return Intl.message(
+      'ATTACH FILES',
+      name: 'attachFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit now`
+  String get submitNow {
+    return Intl.message(
+      'Submit now',
+      name: 'submitNow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

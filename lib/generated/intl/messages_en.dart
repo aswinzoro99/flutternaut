@@ -29,8 +29,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'"),
         "aboutScreenDesc3": MessageLookupByLibrary.simpleMessage(
             "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”"),
+        "anyProject": MessageLookupByLibrary.simpleMessage("ANY PROJECT?"),
         "aswinRanjith":
             MessageLookupByLibrary.simpleMessage("ASWIN RANJITH..."),
+        "attachFiles": MessageLookupByLibrary.simpleMessage("ATTACH FILES"),
         "basedIn": MessageLookupByLibrary.simpleMessage("based in"),
         "blogs": MessageLookupByLibrary.simpleMessage("BLOGS"),
         "clientsInIndia":
@@ -58,11 +60,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("MY SPECIALITIES"),
         "niceToMeetYou":
             MessageLookupByLibrary.simpleMessage("Nice to meet you!"),
+        "reachOutMe": MessageLookupByLibrary.simpleMessage("REACH OUT ME"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(
             "Only Available in DESKTOP!!!"),
         "services": MessageLookupByLibrary.simpleMessage("SERVICES"),
         "softwareEngineer":
             MessageLookupByLibrary.simpleMessage("Software Engineer"),
+        "submitNow": MessageLookupByLibrary.simpleMessage("Submit now"),
         "underDevelopment":
             MessageLookupByLibrary.simpleMessage("Under Development"),
         "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),

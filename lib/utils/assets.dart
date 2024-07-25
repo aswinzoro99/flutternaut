@@ -14,4 +14,5 @@ class Assets {
   static const String contact = '$_basePath/contact.png';
   static const String location = '$_basePath/location.png';
   static const String quotes = '$_basePath/quotes.png';
+  static const String attach = '$_basePath/attach.png';
 }

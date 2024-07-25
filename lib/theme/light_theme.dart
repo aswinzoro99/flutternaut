@@ -14,6 +14,22 @@ final ThemeData lightTheme = ThemeData(
     primary: secondaryColor,
   ),
   hoverColor: secondaryColor,
+  inputDecorationTheme: InputDecorationTheme(
+    contentPadding: EdgeInsets.zero,
+    enabledBorder: const UnderlineInputBorder(
+      borderSide: BorderSide(color: backgroundColor),
+    ),
+    focusedBorder: const UnderlineInputBorder(
+      borderSide: BorderSide(color: backgroundColor),
+    ),
+    hintStyle: TextStyle(
+      fontFamily: kFontFamily,
+      color: secondaryTextColor,
+      fontSize: titleMedium,
+      fontWeight: FontWeight.w300,
+      letterSpacing: kLetterSpacing,
+    ),
+  ),
   textTheme: TextTheme(
     displayLarge: TextStyle(
       fontFamily: kFontFamily,
