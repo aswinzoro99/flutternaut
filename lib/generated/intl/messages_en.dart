@@ -44,14 +44,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
         "downloadMyResume":
             MessageLookupByLibrary.simpleMessage("Download my resume"),
+        "expand": MessageLookupByLibrary.simpleMessage("Expand"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "home": MessageLookupByLibrary.simpleMessage("HOME"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Aswin."),
         "india": MessageLookupByLibrary.simpleMessage("India"),
         "letsTalkWithMe":
             MessageLookupByLibrary.simpleMessage("Let’s talk with me"),
+        "minimise": MessageLookupByLibrary.simpleMessage("Minimise"),
         "myExperience": MessageLookupByLibrary.simpleMessage("MY EXPERIENCE"),
         "myNameIs": MessageLookupByLibrary.simpleMessage("MY NAME IS"),
+        "mySpecialities":
+            MessageLookupByLibrary.simpleMessage("MY SPECIALITIES"),
         "niceToMeetYou":
             MessageLookupByLibrary.simpleMessage("Nice to meet you!"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(

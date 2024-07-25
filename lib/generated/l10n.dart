@@ -339,6 +339,36 @@ class S {
       args: [],
     );
   }
+
+  /// `MY SPECIALITIES`
+  String get mySpecialities {
+    return Intl.message(
+      'MY SPECIALITIES',
+      name: 'mySpecialities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expand`
+  String get expand {
+    return Intl.message(
+      'Expand',
+      name: 'expand',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Minimise`
+  String get minimise {
+    return Intl.message(
+      'Minimise',
+      name: 'minimise',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

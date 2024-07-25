@@ -15,6 +15,7 @@ import 'package:universal_html/html.dart' as html;
 
 import '../../../utils/locator.dart';
 import '../home_screen/home_screen.dart';
+import '../services_screen/services_screen.dart';
 
 @RoutePage()
 class RootScreen extends BaseScreen implements AutoRouteWrapper {
@@ -130,12 +131,7 @@ class _RootScreenState extends BaseState<RootScreen> {
                   case NavbarType.about:
                     return const AboutScreen();
                   case NavbarType.services:
-                    return Center(
-                      child: Text(
-                        context.loc.underDevelopment,
-                        style: context.textTheme.bodyLarge,
-                      ),
-                    );
+                    return const ServicesScreen();
                   case NavbarType.works:
                     return Center(
                       child: Text(

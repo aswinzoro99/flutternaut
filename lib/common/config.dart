@@ -1,3 +1,5 @@
+import 'package:flutternaut_frontend_webapp/domain/entity/services_screen/services.dart';
+
 import '../domain/entity/about_screen/experience.dart';
 
 class Config {
@@ -27,6 +29,37 @@ class Config {
       position: 'iOS Application Developer',
       company: 'Market Simplified India PVT. LTD.',
       duration: 'NOVEMBER 2020 - MARCH 2022',
+    ),
+  ];
+
+  static List<Services> servicesList = [
+    Services(
+      service: 'WEB APPLICATION DEVELOPER',
+      smallDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+      detailedDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+    ),
+    Services(
+      service: 'MOBILE APPLICATION DEVELOPER',
+      smallDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+      detailedDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+    ),
+    Services(
+      service: 'UI/UX DESIGN',
+      smallDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+      detailedDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+    ),
+    Services(
+      service: 'USER RESEARCH',
+      smallDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+      detailedDescription:
+          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
     ),
   ];
 }

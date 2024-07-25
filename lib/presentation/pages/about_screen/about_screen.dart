@@ -3,6 +3,7 @@ import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_title_widget.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/user_details_widget.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -35,7 +36,10 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                 padding: EdgeInsets.all(paddingXXXL),
                 child: Column(
                   children: [
-                    buildWelcomeTextWidget(),
+                    CustomTitleWidget(
+                      title: context.loc.welcomeTo,
+                      subTitle: context.loc.niceToMeetYou,
+                    ),
                     buildDetailsWidget(),
                   ],
                 ),
@@ -44,28 +48,6 @@ class _AboutScreenState extends BaseState<AboutScreen> {
             ],
           ),
         ),
-      ],
-    );
-  }
-
-  Row buildWelcomeTextWidget() {
-    return Row(
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              context.loc.niceToMeetYou,
-              style: context.textTheme.titleLarge
-                  ?.copyWith(fontStyle: FontStyle.italic),
-            ),
-            Text(
-              context.loc.welcomeTo,
-              style: context.textTheme.headlineLarge
-                  ?.copyWith(fontWeight: FontWeight.w600),
-            ),
-          ],
-        )
       ],
     );
   }

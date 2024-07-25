@@ -27,5 +27,8 @@
   "copiedToClipboard": "Copied to clipboard",
   "downloadMyResume": "Download my resume",
   "experience": "Experience",
-  "myExperience": "MY EXPERIENCE"
+  "myExperience": "MY EXPERIENCE",
+  "mySpecialities": "MY SPECIALITIES",
+  "expand": "Expand",
+  "minimise": "Minimise"
 }
