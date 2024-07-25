@@ -40,33 +40,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Compress action step
-        uses: a7ul/tar-action@v1.1.0
-        id: compress
-        with:
-          command: c
-          cwd: ./
-          files: build/web/
-          outPath: webapp.tar.gz
-          
-      - name: Extract files
-        uses: a7ul/tar-action@v1.1.0
-        id: extract
-        with:
-          command: c
-          files: webapp.tar.gz
-          
-      - name: Archive web artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: webapp.tar.gz
-          path: build/web
+      - name: Set up environment variables
+        run: |
+          echo "BUILD_REPOSITORY_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+          echo "BUILD_ARTIFACTSTAGINGDIRECTORY=${GITHUB_WORKSPACE}/artifact_staging" >> $GITHUB_ENV
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-        
-      - name: Deploy GitHub Pages site
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Create artifact staging directory
+        run: mkdir -p ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}
+
+      - name: Archiving web app build
+        run: tar -czf ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}/${{ env.BUILD_REPOSITORY_NAME }}-web.tar.gz -C ${{ env.BUILD_REPOSITORY_NAME }}/build/web .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
         with:
-          artifact_name: webapp.tar.gz
+          name: app-drop
+          path: ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}/${{ env.BUILD_REPOSITORY_NAME }}-web.tar.gz
