@@ -41,7 +41,7 @@ jobs:
     steps:
     
       - name: List build directory
-        run: ls -la build/web
+        run: ls -la
       
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
