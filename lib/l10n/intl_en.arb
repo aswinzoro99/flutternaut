@@ -23,5 +23,6 @@
   "welcomeTo": "WELCOME TO...",
   "works": "WORKS",
   "yearsExperience": "Years experience...",
-  "copy": "Copy"
+  "copy": "Copy",
+  "copiedToClipboard": "Copied to clipboard"
 }

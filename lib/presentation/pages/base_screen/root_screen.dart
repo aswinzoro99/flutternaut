@@ -224,15 +224,18 @@ class _RootScreenState extends BaseState<RootScreen> {
       onTap: () {
         html.window.open(item.redirectionUrl, "blank");
       },
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: paddingSmall1),
-        child: Container(
-          padding: EdgeInsets.all(paddingSmaller2),
-          decoration: const BoxDecoration(
-            color: backgroundColor,
-            shape: BoxShape.circle,
+      child: Tooltip(
+        message: item.name,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: paddingSmall1),
+          child: Container(
+            padding: EdgeInsets.all(paddingSmaller2),
+            decoration: const BoxDecoration(
+              color: backgroundColor,
+              shape: BoxShape.circle,
+            ),
+            child: buildIcon(item.assetValue, secondaryColor),
           ),
-          child: buildIcon(item.assetValue, secondaryColor),
         ),
       ),
     );

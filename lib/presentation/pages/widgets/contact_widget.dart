@@ -1,9 +1,11 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/utils/dialog_manager.dart';
 
 import '../../../common/dimensions.dart';
 import '../../../theme/light_theme_colors.dart';
+import '../../../utils/locator.dart';
 
 class ContactWidget extends StatelessWidget {
   final String assetName;
@@ -27,10 +29,7 @@ class ContactWidget extends StatelessWidget {
             color: Colors.black12,
             shape: BoxShape.circle,
           ),
-          child: Image.asset(
-            assetName,
-            height: iconSizeSmall,
-          ),
+          child: Image.asset(assetName, height: iconSizeSmall),
         ),
         SizedBox(width: paddingSmall1),
         Flexible(
@@ -40,6 +39,10 @@ class ContactWidget extends StatelessWidget {
               onPressed: onPressed ??
                   () {
                     FlutterClipboard.copy(value);
+                    locate<DialogManager>().showSnackBar(
+                      context: context,
+                      message: context.loc.copiedToClipboard,
+                    );
                   },
               child: Text(
                 value,
