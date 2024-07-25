@@ -44,7 +44,6 @@ jobs:
         id: compress
         with:
           command: c
-          cwd: ./
           files: build/web
           outPath: webapp.tar.gz
           
