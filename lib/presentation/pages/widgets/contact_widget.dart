@@ -1,3 +1,4 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 
@@ -7,10 +8,12 @@ import '../../../theme/light_theme_colors.dart';
 class ContactWidget extends StatelessWidget {
   final String assetName;
   final String value;
+  final void Function()? onPressed;
 
   const ContactWidget({
     required this.assetName,
     required this.value,
+    this.onPressed,
     super.key,
   });
 
@@ -30,13 +33,23 @@ class ContactWidget extends StatelessWidget {
           ),
         ),
         SizedBox(width: paddingSmall1),
-        Expanded(
-          child: Text(
-            value,
-            style: context.textTheme.titleSmall?.copyWith(
-              color: primaryTextColor,
+        Flexible(
+          child: Tooltip(
+            message: context.loc.copy,
+            child: TextButton(
+              onPressed: onPressed ??
+                  () {
+                    FlutterClipboard.copy(value);
+                  },
+              child: Text(
+                value,
+                style: context.textTheme.titleSmall?.copyWith(
+                  color: primaryTextColor,
+                ),
+                maxLines: 2,
+                textAlign: TextAlign.start,
+              ),
             ),
-            maxLines: 2,
           ),
         )
       ],

@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "clientsInIndia":
             MessageLookupByLibrary.simpleMessage("Clients in India..."),
         "contact": MessageLookupByLibrary.simpleMessage("CONTACT"),
+        "copy": MessageLookupByLibrary.simpleMessage("Copy"),
         "copyrightDesc": MessageLookupByLibrary.simpleMessage(
             "Copyright ©2023 Aswin Ranjith. All right reserved."),
         "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
