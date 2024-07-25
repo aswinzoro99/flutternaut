@@ -6,6 +6,9 @@ import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
+import '../widgets/custom_button_with_icon.dart';
+import '../widgets/user_details_widget.dart';
+
 class HomeScreen extends BaseScreen {
   const HomeScreen({super.key});
 
@@ -50,6 +53,11 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                     text: context.loc.myNameIs,
                     style: context.textTheme.displayLarge,
                   ),
+                  WidgetSpan(
+                    child: SizedBox(
+                      width: bodyPadding,
+                    ),
+                  ),
                   TextSpan(
                     text: context.loc.aswinRanjith,
                     style: context.textTheme.displayLarge!.copyWith(
@@ -59,31 +67,12 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                 ],
               ),
             ),
-            RichText(
-              textAlign: TextAlign.start,
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: context.loc.softwareEngineer,
-                    style: context.textTheme.headlineSmall!
-                        .copyWith(color: primaryTextColor),
-                  ),
-                  WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  TextSpan(
-                    text: context.loc.basedIn,
-                    style: TextStyle(fontSize: headlineSmall),
-                  ),
-                  WidgetSpan(child: SizedBox(width: paddingSmall2)),
-                  TextSpan(
-                    text: context.loc.india,
-                    style: context.textTheme.headlineSmall!
-                        .copyWith(color: primaryTextColor),
-                  ),
-                ],
-              ),
-            ),
+            UserDetailsWidget(style: context.textTheme.headlineSmall!),
             SizedBox(height: paddingMedium1),
-            buildTalkWIthMe(),
+            CustomButtonWithIcon(
+              text: context.loc.letsTalkWithMe,
+              onPressed: () {},
+            ),
             SizedBox(height: paddingMedium1),
             buildContacts(),
           ],
@@ -97,29 +86,6 @@ class _HomeScreenState extends BaseState<HomeScreen> {
     return Image.asset(
       Assets.homeScreenImage,
       height: context.maxHeight,
-    );
-  }
-
-  Container buildTalkWIthMe() {
-    return Container(
-      margin: EdgeInsets.only(right: paddingXXXL * 3),
-      padding: EdgeInsets.all(paddingRegular1),
-      decoration: const BoxDecoration(
-        color: secondaryColor,
-      ),
-      child: Row(
-        children: [
-          Text(
-            context.loc.letsTalkWithMe,
-            style: context.textTheme.titleSmall,
-          ),
-          SizedBox(width: paddingRegular2),
-          Image.asset(
-            Assets.northEast,
-            height: iconSizeL,
-          ),
-        ],
-      ),
     );
   }
 

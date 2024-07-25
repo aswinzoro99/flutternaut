@@ -23,24 +23,51 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage("ABOUT"),
+        "aboutScreenDesc1": MessageLookupByLibrary.simpleMessage(
+            "\'\'Hello there! My name is Aswin Ranjith am a Software Engineer , and I\'m very passionate and dedicated to my work.\'\'"),
+        "aboutScreenDesc2": MessageLookupByLibrary.simpleMessage(
+            "\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'"),
+        "aboutScreenDesc3": MessageLookupByLibrary.simpleMessage(
+            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”"),
         "aswinRanjith":
             MessageLookupByLibrary.simpleMessage("ASWIN RANJITH..."),
         "basedIn": MessageLookupByLibrary.simpleMessage("based in"),
         "blogs": MessageLookupByLibrary.simpleMessage("BLOGS"),
+        "clientsInIndia":
+            MessageLookupByLibrary.simpleMessage("Clients in India..."),
         "contact": MessageLookupByLibrary.simpleMessage("CONTACT"),
+        "copiedToClipboard":
+            MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+        "copy": MessageLookupByLibrary.simpleMessage("Copy"),
         "copyrightDesc": MessageLookupByLibrary.simpleMessage(
             "Copyright ©2023 Aswin Ranjith. All right reserved."),
+        "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
+        "downloadMyResume":
+            MessageLookupByLibrary.simpleMessage("Download my resume"),
+        "expand": MessageLookupByLibrary.simpleMessage("Expand"),
+        "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "home": MessageLookupByLibrary.simpleMessage("HOME"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Aswin."),
         "india": MessageLookupByLibrary.simpleMessage("India"),
         "letsTalkWithMe":
             MessageLookupByLibrary.simpleMessage("Let’s talk with me"),
+        "minimise": MessageLookupByLibrary.simpleMessage("Minimise"),
+        "myExperience": MessageLookupByLibrary.simpleMessage("MY EXPERIENCE"),
         "myNameIs": MessageLookupByLibrary.simpleMessage("MY NAME IS"),
+        "mySpecialities":
+            MessageLookupByLibrary.simpleMessage("MY SPECIALITIES"),
+        "niceToMeetYou":
+            MessageLookupByLibrary.simpleMessage("Nice to meet you!"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(
             "Only Available in DESKTOP!!!"),
         "services": MessageLookupByLibrary.simpleMessage("SERVICES"),
         "softwareEngineer":
             MessageLookupByLibrary.simpleMessage("Software Engineer"),
-        "works": MessageLookupByLibrary.simpleMessage("WORKS")
+        "underDevelopment":
+            MessageLookupByLibrary.simpleMessage("Under Development"),
+        "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),
+        "works": MessageLookupByLibrary.simpleMessage("WORKS"),
+        "yearsExperience":
+            MessageLookupByLibrary.simpleMessage("Years experience...")
       };
 }

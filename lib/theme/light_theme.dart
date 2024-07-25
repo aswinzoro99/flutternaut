@@ -13,7 +13,7 @@ final ThemeData lightTheme = ThemeData(
     surface: backgroundColor,
     primary: secondaryColor,
   ),
-  hoverColor: hoverColor,
+  hoverColor: secondaryColor,
   textTheme: TextTheme(
     displayLarge: TextStyle(
       fontFamily: kFontFamily,
@@ -31,6 +31,7 @@ final ThemeData lightTheme = ThemeData(
       fontFamily: kFontFamily,
       color: primaryTextColor,
       fontSize: displaySmall,
+      fontWeight: FontWeight.bold,
       letterSpacing: kLetterSpacing,
     ),
     headlineLarge: TextStyle(
@@ -47,7 +48,7 @@ final ThemeData lightTheme = ThemeData(
     ),
     headlineSmall: TextStyle(
       fontFamily: kFontFamily,
-      color: secondaryTextColor,
+      color: primaryTextColor,
       fontSize: headlineSmall,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.italic,

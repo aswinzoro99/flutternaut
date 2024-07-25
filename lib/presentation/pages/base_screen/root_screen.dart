@@ -8,11 +8,14 @@ import 'package:flutternaut_frontend_webapp/enum/navbar_type.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/presentation/bloc/root/root_bloc.dart';
+import 'package:flutternaut_frontend_webapp/presentation/pages/about_screen/about_screen.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
+import 'package:universal_html/html.dart' as html;
 
 import '../../../utils/locator.dart';
 import '../home_screen/home_screen.dart';
+import '../services_screen/services_screen.dart';
 
 @RoutePage()
 class RootScreen extends BaseScreen implements AutoRouteWrapper {
@@ -105,19 +108,59 @@ class _RootScreenState extends BaseState<RootScreen> {
                   );
                 },
               ),
-              Expanded(
-                child: Row(
-                  children: [
-                    const Expanded(child: HomeScreen()),
-                    buildFooter(),
-                  ],
-                ),
-              ),
+              buildBody(),
             ],
           ),
         );
       }
     });
+  }
+
+  Widget buildBody() {
+    return Expanded(
+      child: Row(
+        children: [
+          Expanded(
+            child: BlocBuilder<RootBloc, RootState>(
+              buildWhen: (previous, current) =>
+                  previous.selectedItem != current.selectedItem,
+              builder: (context, state) {
+                switch (state.selectedItem) {
+                  case NavbarType.home:
+                    return const HomeScreen();
+                  case NavbarType.about:
+                    return const AboutScreen();
+                  case NavbarType.services:
+                    return const ServicesScreen();
+                  case NavbarType.works:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                  case NavbarType.blogs:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                  case NavbarType.contacts:
+                    return Center(
+                      child: Text(
+                        context.loc.underDevelopment,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    );
+                }
+              },
+            ),
+          ),
+          buildFooter(),
+        ],
+      ),
+    );
   }
 
   InkWell getNavigationRailItem({
@@ -133,11 +176,23 @@ class _RootScreenState extends BaseState<RootScreen> {
           bottom: paddingRegular1,
           right: paddingXXXL,
         ),
-        child: Text(
-          title,
-          style: (isSelected ?? false)
-              ? context.textTheme.labelLarge
-              : context.textTheme.labelMedium,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            if (isSelected ?? false)
+              Container(
+                color: Colors.amber,
+                height: dp2,
+                // TODO(Aswin): Remove hard coded values
+                width: dp50,
+              ),
+            Text(
+              title,
+              style: (isSelected ?? false)
+                  ? context.textTheme.labelLarge
+                  : context.textTheme.labelMedium,
+            ),
+          ],
         ),
       ),
     );
@@ -147,9 +202,9 @@ class _RootScreenState extends BaseState<RootScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        buildSocial(Assets.instagram),
-        buildSocial(Assets.github),
-        buildSocial(Assets.linkedIn),
+        buildSocial(Socials.instagram),
+        buildSocial(Socials.github),
+        buildSocial(Socials.linkedIn),
         SizedBox(height: bodyPadding),
         Text(
           context.loc.copyrightDesc,
@@ -159,16 +214,25 @@ class _RootScreenState extends BaseState<RootScreen> {
     );
   }
 
-  Padding buildSocial(String asset) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: paddingSmall1),
-      child: Container(
-        padding: EdgeInsets.all(paddingSmaller2),
-        decoration: const BoxDecoration(
-          color: backgroundColor,
-          shape: BoxShape.circle,
+  InkWell buildSocial(Socials item) {
+    // TODO(Aswin): Add splash effect
+    return InkWell(
+      onTap: () {
+        html.window.open(item.redirectionUrl, "blank");
+      },
+      child: Tooltip(
+        message: item.name,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: paddingSmall1),
+          child: Container(
+            padding: EdgeInsets.all(paddingSmaller2),
+            decoration: const BoxDecoration(
+              color: backgroundColor,
+              shape: BoxShape.circle,
+            ),
+            child: buildIcon(item.assetValue, secondaryColor),
+          ),
         ),
-        child: buildIcon(asset, secondaryColor),
       ),
     );
   }

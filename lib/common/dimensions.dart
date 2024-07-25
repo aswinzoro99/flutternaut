@@ -98,6 +98,8 @@ double get sp36 => 36;
 
 double get sp22 => 22;
 
+double get sp26 => 26;
+
 double get sp21 => 21;
 
 double get sp20 => 20;
