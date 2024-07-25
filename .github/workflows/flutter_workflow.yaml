@@ -39,6 +39,10 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+    
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.7
+      
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
         id: compress
