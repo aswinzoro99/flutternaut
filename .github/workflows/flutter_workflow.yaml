@@ -40,15 +40,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Checkout repository
-        uses: actions/checkout@v4.1.7
+      - name: List build directory
+        run: ls -la build/web
       
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
         id: compress
         with:
           command: c
-          files: ./build/web
+          files: build/web
           outPath: webapp.tar.gz
           
       - name: Extract files
