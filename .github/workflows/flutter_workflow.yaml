@@ -48,7 +48,8 @@ jobs:
         id: compress
         with:
           command: c
-          files: build/web
+          cwd: ./build
+          files: /web
           outPath: webapp.tar.gz
           
       - name: Extract files
