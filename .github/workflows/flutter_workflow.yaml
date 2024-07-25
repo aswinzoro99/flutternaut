@@ -49,7 +49,7 @@ jobs:
         run: mkdir -p ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}
 
       - name: Archiving web app build
-        run: tar -czf ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}/${{ env.BUILD_REPOSITORY_NAME }}-web.tar.gz -C ${{ env.BUILD_REPOSITORY_NAME }}/build/web .
+        run: tar -czf ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}/${{ env.BUILD_REPOSITORY_NAME }}-web.tar.gz -C build/web
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
