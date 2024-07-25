@@ -45,7 +45,8 @@ jobs:
         id: compress
         with:
           command: c
-          files: ${{ github.event.repository.name }}/build/web
+          cwd: ../
+          files: build/web
           outPath: webapp.tar.gz
           
       - name: Extract files
