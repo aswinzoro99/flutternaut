@@ -24,5 +24,8 @@
   "works": "WORKS",
   "yearsExperience": "Years experience...",
   "copy": "Copy",
-  "copiedToClipboard": "Copied to clipboard"
+  "copiedToClipboard": "Copied to clipboard",
+  "downloadMyResume": "Download my resume",
+  "experience": "Experience",
+  "myExperience": "MY EXPERIENCE"
 }

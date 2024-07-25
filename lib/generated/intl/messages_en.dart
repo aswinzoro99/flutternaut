@@ -42,11 +42,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "copyrightDesc": MessageLookupByLibrary.simpleMessage(
             "Copyright ©2023 Aswin Ranjith. All right reserved."),
         "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
+        "downloadMyResume":
+            MessageLookupByLibrary.simpleMessage("Download my resume"),
+        "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "home": MessageLookupByLibrary.simpleMessage("HOME"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Aswin."),
         "india": MessageLookupByLibrary.simpleMessage("India"),
         "letsTalkWithMe":
             MessageLookupByLibrary.simpleMessage("Let’s talk with me"),
+        "myExperience": MessageLookupByLibrary.simpleMessage("MY EXPERIENCE"),
         "myNameIs": MessageLookupByLibrary.simpleMessage("MY NAME IS"),
         "niceToMeetYou":
             MessageLookupByLibrary.simpleMessage("Nice to meet you!"),

@@ -309,6 +309,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Download my resume`
+  String get downloadMyResume {
+    return Intl.message(
+      'Download my resume',
+      name: 'downloadMyResume',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Experience`
+  String get experience {
+    return Intl.message(
+      'Experience',
+      name: 'experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MY EXPERIENCE`
+  String get myExperience {
+    return Intl.message(
+      'MY EXPERIENCE',
+      name: 'myExperience',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

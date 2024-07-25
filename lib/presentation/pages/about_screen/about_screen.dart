@@ -9,6 +9,7 @@ import 'package:universal_html/html.dart' as html;
 import '../../../theme/light_theme_colors.dart';
 import '../../../utils/assets.dart';
 import '../widgets/contact_widget.dart';
+import '../widgets/custom_button_with_icon.dart';
 
 class AboutScreen extends BaseScreen {
   const AboutScreen({super.key});
@@ -20,17 +21,29 @@ class AboutScreen extends BaseScreen {
 class _AboutScreenState extends BaseState<AboutScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(paddingXXXL),
-      child: buildBody(),
-    );
+    return buildBody();
   }
 
-  Column buildBody() {
-    return Column(
-      children: [
-        buildWelcomeTextWidget(),
-        buildDetailsWidget(),
+  CustomScrollView buildBody() {
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(paddingXXXL),
+                child: Column(
+                  children: [
+                    buildWelcomeTextWidget(),
+                    buildDetailsWidget(),
+                  ],
+                ),
+              ),
+              buildMyExperienceSection(),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -99,12 +112,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
 
   TextButton buildDownloadCVButton() {
     return TextButton(
-      onPressed: () {
-        html.window.open(
-          Config.resumeDonwloadLink,
-          "blank",
-        );
-      },
+      onPressed: downloadResume,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -334,6 +342,74 @@ class _AboutScreenState extends BaseState<AboutScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  Row buildMyExperienceSection() {
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            margin: EdgeInsets.only(right: paddingXXXL),
+            padding: EdgeInsets.all(paddingXXL),
+            height: context.maxHeight / 2,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: gradientColors,
+              ),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.loc.experience,
+                        style: context.textTheme.titleLarge?.copyWith(
+                          fontStyle: FontStyle.italic,
+                          color: secondaryTextColor,
+                        ),
+                      ),
+                      SizedBox(height: paddingMedium1),
+                      Text(
+                        context.loc.myExperience,
+                        style: context.textTheme.headlineLarge?.copyWith(
+                          color: secondaryTextColor,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: paddingMedium1),
+                      Text(
+                        context.loc.aboutScreenDesc1,
+                        style: context.textTheme.titleSmall,
+                      ),
+                      SizedBox(height: paddingLarge1),
+                      CustomButtonWithIcon(
+                        text: context.loc.downloadMyResume,
+                        onPressed: downloadResume,
+                        margin: EdgeInsets.only(right: paddingXXXL * 3.2),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Future<void> downloadResume() async {
+    html.window.open(
+      Config.resumeDonwloadLink,
+      "blank",
     );
   }
 }
