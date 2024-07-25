@@ -179,7 +179,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
             ],
           ),
           SizedBox(height: paddingLarge1),
-          buildHorizontalDivider(),
+          buildHorizontalDivider(dp1, Colors.black12),
           SizedBox(height: paddingLarge1),
           Row(
             children: [
@@ -195,11 +195,11 @@ class _AboutScreenState extends BaseState<AboutScreen> {
     );
   }
 
-  Row buildHorizontalDivider() {
+  Row buildHorizontalDivider(double height, Color color) {
     return Row(
       children: [
         Expanded(
-          child: Container(height: dp1, color: Colors.black12),
+          child: Container(height: height, color: color),
         )
       ],
     );
@@ -395,7 +395,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                 ),
                 Expanded(
                   child: Column(
-                    children: [],
+                    children: getExperienceList(),
                   ),
                 ),
               ],
@@ -411,5 +411,50 @@ class _AboutScreenState extends BaseState<AboutScreen> {
       Config.resumeDonwloadLink,
       "blank",
     );
+  }
+
+  List<Widget> getExperienceList() {
+    final children = <Widget>[];
+
+    for (var exp in Config.experienceList) {
+      children.add(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: paddingMedium1),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  exp.duration,
+                  style: context.textTheme.bodySmall?.copyWith(
+                    color: secondaryTextColor,
+                  ),
+                ),
+                Text(
+                  '-${exp.company}',
+                  style: context.textTheme.bodySmall?.copyWith(
+                    color: secondaryTextColor,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: paddingMedium1),
+            Text(
+              exp.position.toUpperCase(),
+              style: context.textTheme.titleLarge?.copyWith(
+                color: secondaryTextColor,
+                fontSize: sp26,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: paddingMedium1),
+            buildHorizontalDivider(0.2, secondaryTextColor),
+          ],
+        ),
+      );
+    }
+
+    return children;
   }
 }

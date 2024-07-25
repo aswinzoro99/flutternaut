@@ -1,3 +1,5 @@
+import '../domain/entity/about_screen/experience.dart';
+
 class Config {
   static const int responsiveTriggerWidth = 1300;
   static const String userName = 'ASWIN RANJITH';
@@ -14,4 +16,17 @@ class Config {
   static const String githubLink = "https://github.com/aswinzoro99/";
   static const String resumeDonwloadLink =
       "https://aswin-ranjith-resume.tiiny.site/";
+
+  static List<Experience> experienceList = [
+    Experience(
+      position: 'Flutter Application Developer',
+      company: 'IOURING PRIVATE LTD.',
+      duration: 'APRIL 2022 - PRESENT',
+    ),
+    Experience(
+      position: 'iOS Application Developer',
+      company: 'Market Simplified India PVT. LTD.',
+      duration: 'NOVEMBER 2020 - MARCH 2022',
+    ),
+  ];
 }
