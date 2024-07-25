@@ -48,7 +48,7 @@ jobs:
         id: compress
         with:
           command: c
-          files: build/web
+          files: ./build/web
           outPath: webapp.tar.gz
           
       - name: Extract files
@@ -56,7 +56,6 @@ jobs:
         id: extract
         with:
           command: c
-          cwd: ./build/web
           files: webapp.tar.gz
           
       - name: Archive web artifact
