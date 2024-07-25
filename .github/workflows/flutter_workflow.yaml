@@ -39,16 +39,13 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    
-      - name: List build directory
-        run: ls -la
       
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
         id: compress
         with:
           command: c
-          files: ~/build/web
+          files: ${{ github.event.repository.name }}/build/web
           outPath: webapp.tar.gz
           
       - name: Extract files
