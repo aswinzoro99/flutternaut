@@ -156,6 +156,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
             soc.name.toUpperCase(),
             style: context.textTheme.titleSmall?.copyWith(
               color: primaryTextColor,
+              decoration: TextDecoration.underline,
             ),
           ),
         ),
