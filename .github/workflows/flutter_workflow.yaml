@@ -47,7 +47,7 @@ jobs:
         run: mkdir -p ${{ env.BUILD_ARTIFACTSTAGINGDIRECTORY }}
 
       - name: Debug - List files in build directory
-        run: ls -R ./build
+        run: ls -R build
 
       - name: Check if build/web directory exists
         id: check-web-dir
