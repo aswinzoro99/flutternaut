@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
@@ -179,8 +179,8 @@ class _ContactsScreenState extends State<ContactsScreen> {
     return children;
   }
 
-  StreamBuilder<File?> buildFileUploader() {
-    return StreamBuilder<File?>(
+  StreamBuilder<Uint8List?> buildFileUploader() {
+    return StreamBuilder<Uint8List?>(
         stream: bloc.uploadedFile.stream,
         builder: (context, snapshot) {
           return Row(
@@ -196,7 +196,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                   bloc.uploadedFile.add(file);
                 },
                 child: Text(
-                  bloc.uploadedFile.hasValue
+                  bloc.uploadedFile.value != null
                       ? context.loc.oneFileUploaded
                       : context.loc.attachFiles,
                   style: context.textTheme.titleSmall!

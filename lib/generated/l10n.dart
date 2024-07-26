@@ -419,6 +419,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Name cannot be empty`
+  String get nameCannotBeEmpty {
+    return Intl.message(
+      'Name cannot be empty',
+      name: 'nameCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email cannot be empty`
+  String get emailCannotBeEmpty {
+    return Intl.message(
+      'Email cannot be empty',
+      name: 'emailCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message cannot be empty`
+  String get messageCannotBeEmpty {
+    return Intl.message(
+      'Message cannot be empty',
+      name: 'messageCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get genericErrorMessage {
+    return Intl.message(
+      'Something went wrong',
+      name: 'genericErrorMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

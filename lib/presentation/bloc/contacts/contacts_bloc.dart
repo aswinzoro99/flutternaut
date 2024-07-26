@@ -1,9 +1,10 @@
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/enum/snackbar_type.dart';
+import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/route/app_router.dart';
 import 'package:flutternaut_frontend_webapp/utils/dialog_manager.dart';
 import 'package:rxdart/subjects.dart';
@@ -19,8 +20,8 @@ class ContactsBloc extends Bloc<ContactsEvent, ContactsState> {
         (event, emit) => _handleOnSubmitPressedEvent(event, emit));
   }
 
-  final BehaviorSubject<File?> uploadedFile =
-      BehaviorSubject<File?>.seeded(null);
+  final BehaviorSubject<Uint8List?> uploadedFile =
+      BehaviorSubject<Uint8List?>.seeded(null);
 
   final TextEditingController nameTC = TextEditingController();
   final TextEditingController emailTC = TextEditingController();
@@ -31,28 +32,38 @@ class ContactsBloc extends Bloc<ContactsEvent, ContactsState> {
     Emitter<ContactsState> emit,
   ) async {
     final name = nameTC.text;
-    final email = emailTC.text;
+    final mail = emailTC.text;
     final message = messageTC.text;
     final context = locate<AppRouter>().navigatorKey.currentContext!;
 
     if (name.isEmpty) {
       locate<DialogManager>().showSnackBar(
         context: context,
-        message: 'Name cannot be empty',
+        message: context.loc.nameCannotBeEmpty,
         type: SnackbarType.error,
       );
-    } else if (email.isEmpty) {
+    } else if (mail.isEmpty) {
       locate<DialogManager>().showSnackBar(
         context: context,
-        message: 'Email cannot be empty',
+        message: context.loc.emailCannotBeEmpty,
         type: SnackbarType.error,
       );
     } else if (message.isEmpty) {
       locate<DialogManager>().showSnackBar(
         context: context,
-        message: 'Message cannot be empty',
+        message: context.loc.messageCannotBeEmpty,
         type: SnackbarType.error,
       );
-    } else {}
+    } else {
+      uploadedFile.add(null);
+      nameTC.clear();
+      emailTC.clear();
+      messageTC.clear();
+      locate<DialogManager>().showSnackBar(
+        context: context,
+        message: context.loc.genericErrorMessage,
+        type: SnackbarType.error,
+      );
+    }
   }
 }

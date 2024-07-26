@@ -20,10 +20,12 @@ dependencies:
   equatable: 2.0.5
   file_picker: 8.0.6
   flutter_bloc: 8.1.4
+  flutter_email_sender: 6.0.3
   flutter_localizations:
     sdk: flutter
   get_it: 7.7.0
   intl: any
+  path_provider: 2.1.2
   rxdart: 0.27.7
   universal_html: 2.2.4
 

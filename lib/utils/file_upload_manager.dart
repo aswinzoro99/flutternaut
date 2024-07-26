@@ -1,13 +1,14 @@
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
 
 class FileUploadManager {
-  Future<File?> pickFile() async {
+  Future<Uint8List?> pickFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
 
     if (result != null) {
-      return File(result.files.single.path!);
+      final bytes = result.files.single.bytes!;
+      return bytes;
     } else {
       return null;
     }

@@ -35,5 +35,9 @@
   "underDevelopment": "Under Development",
   "welcomeTo": "WELCOME TO...",
   "works": "WORKS",
-  "yearsExperience": "Years experience..."
+  "yearsExperience": "Years experience...",
+  "nameCannotBeEmpty": "Name cannot be empty",
+  "emailCannotBeEmpty": "Email cannot be empty",
+  "messageCannotBeEmpty": "Message cannot be empty",
+  "genericErrorMessage": "Something went wrong"
 }
