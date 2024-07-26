@@ -409,6 +409,16 @@ class S {
       args: [],
     );
   }
+
+  /// `1 file uploaded!`
+  String get OneFileUploaded {
+    return Intl.message(
+      '1 file uploaded!',
+      name: 'OneFileUploaded',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

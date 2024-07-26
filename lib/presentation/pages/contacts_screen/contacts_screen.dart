@@ -179,7 +179,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 },
                 child: Text(
                   uploadedFile.hasValue
-                      ? '1 file uploaded!'
+                      ? context.loc.OneFileUploaded
                       : context.loc.attachFiles,
                   style: context.textTheme.titleSmall!
                       .copyWith(color: secondaryTextColor),

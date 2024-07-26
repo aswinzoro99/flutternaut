@@ -34,5 +34,6 @@
   "reachOutMe": "REACH OUT ME",
   "anyProject": "ANY PROJECT?",
   "attachFiles": "ATTACH FILES",
-  "submitNow": "Submit now"
+  "submitNow": "Submit now",
+  "OneFileUploaded": "1 file uploaded!"
 }
