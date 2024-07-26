@@ -29,6 +29,13 @@ final ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w300,
       letterSpacing: kLetterSpacing,
     ),
+    labelStyle: TextStyle(
+      fontFamily: kFontFamily,
+      color: secondaryTextColor,
+      fontSize: titleMedium,
+      fontWeight: FontWeight.w300,
+      letterSpacing: kLetterSpacing,
+    ),
   ),
   textTheme: TextTheme(
     displayLarge: TextStyle(

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
@@ -6,10 +8,13 @@ import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_button_with_icon.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_title_widget.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
+import 'package:flutternaut_frontend_webapp/utils/locator.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../../../common/config.dart';
 import '../../../enum/textfield_type.dart';
 import '../../../utils/assets.dart';
+import '../../../utils/file_upload_manager.dart';
 
 class ContactsScreen extends BaseScreen {
   const ContactsScreen({super.key});
@@ -19,6 +24,9 @@ class ContactsScreen extends BaseScreen {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
+  final BehaviorSubject<File?> uploadedFile =
+      BehaviorSubject<File?>.seeded(null);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -108,22 +116,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
           SizedBox(height: paddingLarge1),
           buildTextField(TextfieldType.message),
           SizedBox(height: paddingMedium1),
-          Row(
-            children: [
-              Image.asset(
-                Assets.attach,
-                height: iconSizeRegular,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  context.loc.attachFiles,
-                  style: context.textTheme.titleSmall!
-                      .copyWith(color: secondaryTextColor),
-                ),
-              ),
-            ],
-          ),
+          buildFileUploader(),
           SizedBox(height: paddingMedium1),
           CustomButtonWithIcon(
             text: context.loc.submitNow,
@@ -139,6 +132,8 @@ class _ContactsScreenState extends State<ContactsScreen> {
     return Flexible(
       child: TextField(
         cursorColor: backgroundColor,
+        style:
+            context.textTheme.titleMedium?.copyWith(color: secondaryTextColor),
         maxLines: type.isMessage ? 5 : 1,
         decoration: InputDecoration(hintText: type.getPlaceHolderText()),
       ),
@@ -164,5 +159,34 @@ class _ContactsScreenState extends State<ContactsScreen> {
     }
 
     return children;
+  }
+
+  StreamBuilder<File?> buildFileUploader() {
+    return StreamBuilder<File?>(
+        stream: uploadedFile.stream,
+        builder: (context, snapshot) {
+          return Row(
+            children: [
+              Image.asset(
+                Assets.attach,
+                height: iconSizeRegular,
+              ),
+              TextButton(
+                onPressed: () async {
+                  final file = await locate<FileUploadManager>().pickFile();
+
+                  uploadedFile.add(file);
+                },
+                child: Text(
+                  uploadedFile.hasValue
+                      ? '1 file uploaded!'
+                      : context.loc.attachFiles,
+                  style: context.textTheme.titleSmall!
+                      .copyWith(color: secondaryTextColor),
+                ),
+              ),
+            ],
+          );
+        });
   }
 }
