@@ -36,7 +36,7 @@ jobs:
         id: extract
         with:
           command: x
-          files: webapp.tar.gz
+          files: build/web/webapp.tar.gz
 
       - name: Archive web artifact
         uses: actions/upload-artifact@v4
