@@ -29,7 +29,7 @@ jobs:
           command: c
           cwd: ./
           files: build/web/
-          outPath: webapp.tar.gz
+          outPath: build/web/webapp.tar.gz
 
       - name: Extract files
         uses: a7ul/tar-action@v1.1.0
