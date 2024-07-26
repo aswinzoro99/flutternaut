@@ -32,14 +32,14 @@ jobs:
 
       - run: flutter build web --web-renderer canvaskit --release
 
-      - name: Compress action step
-        uses: a7ul/tar-action@v1.1.0
-        id: compress
-        with:
-          command: c
-          cwd: ./
-          files: build/web/
-          outPath: build/web/webapp.tar.gz
+      # - name: Compress action step
+      #   uses: a7ul/tar-action@v1.1.0
+      #   id: compress
+      #   with:
+      #     command: c
+      #     cwd: ./
+      #     files: build/web/
+      #     outPath: build/web/webapp.tar.gz
           
       - name: configure github pages
         uses: actions/configure-pages@v3
