@@ -7,14 +7,18 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  actions: read
-  id-token: write
-
 jobs:
   build:
+  
+    permissions:
+      contents: write
+      pages: write     
+      id-token: write
+  
+    environment:
+      name: production
+      url: ${{ steps.deployment.outputs.page_url }}
+      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -36,15 +40,17 @@ jobs:
           cwd: ./
           files: build/web/
           outPath: build/web/webapp.tar.gz
+          
+      - name: configure github pages
+        uses: actions/configure-pages@v3
+        with:
+          static_site_generator: next
 
       - name: Archive web artifact
         uses: actions/upload-artifact@v4
         with:
           name: webapp.tar.gz
           path: build/web
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
 
       - name: Deploy GitHub Pages site
         id: deployment
