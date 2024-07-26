@@ -44,8 +44,5 @@ jobs:
           path: build/web
 
       - name: Deploy GitHub Pages site
-        id: deployment
         uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          artifact_name: webapp.tar.gz
     
