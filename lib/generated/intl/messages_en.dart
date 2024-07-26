@@ -22,8 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "OneFileUploaded":
-            MessageLookupByLibrary.simpleMessage("1 file uploaded!"),
         "about": MessageLookupByLibrary.simpleMessage("ABOUT"),
         "aboutScreenDesc1": MessageLookupByLibrary.simpleMessage(
             "\'\'Hello there! My name is Aswin Ranjith am a Software Engineer , and I\'m very passionate and dedicated to my work.\'\'"),
@@ -62,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("MY SPECIALITIES"),
         "niceToMeetYou":
             MessageLookupByLibrary.simpleMessage("Nice to meet you!"),
+        "oneFileUploaded":
+            MessageLookupByLibrary.simpleMessage("1 file uploaded!"),
         "reachOutMe": MessageLookupByLibrary.simpleMessage("REACH OUT ME"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(
             "Only Available in DESKTOP!!!"),

@@ -27,8 +27,13 @@ class _ContactsScreenState extends State<ContactsScreen> {
   late final ContactsBloc bloc;
 
   @override
-  void dispose() {
+  void initState() {
     bloc = locate<ContactsBloc>();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
     bloc.uploadedFile.close();
     super.dispose();
   }
@@ -126,7 +131,9 @@ class _ContactsScreenState extends State<ContactsScreen> {
           SizedBox(height: paddingMedium1),
           CustomButtonWithIcon(
             text: context.loc.submitNow,
-            onPressed: () {},
+            onPressed: () {
+              bloc.add(OnSubmitPressed());
+            },
             margin: EdgeInsets.only(right: 4.5 * paddingXXXL),
           )
         ],
@@ -190,7 +197,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 },
                 child: Text(
                   bloc.uploadedFile.hasValue
-                      ? context.loc.OneFileUploaded
+                      ? context.loc.oneFileUploaded
                       : context.loc.attachFiles,
                   style: context.textTheme.titleSmall!
                       .copyWith(color: secondaryTextColor),
