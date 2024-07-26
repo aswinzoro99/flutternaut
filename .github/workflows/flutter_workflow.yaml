@@ -31,13 +31,6 @@ jobs:
           files: build/web/
           outPath: build/web/webapp.tar.gz
 
-      - name: Extract files
-        uses: a7ul/tar-action@v1.1.0
-        id: extract
-        with:
-          command: x
-          files: build/web/webapp.tar.gz
-
       - name: Archive web artifact
         uses: actions/upload-artifact@v4
         with:
