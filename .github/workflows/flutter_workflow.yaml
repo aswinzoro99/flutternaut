@@ -42,8 +42,10 @@ jobs:
         with:
           name: github-pages.tar.gz
           path: build/web
-          output-path: _site/github-pages.tar.gz
+          output-path: build/web/github-pages.tar.gz
 
       - name: Deploy GitHub Pages site
         uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: build/web
     
