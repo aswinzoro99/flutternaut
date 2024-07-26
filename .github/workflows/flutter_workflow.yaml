@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: github-pages.tar.gz
-          path: build/web
+          path: _site/
 
       - name: Deploy GitHub Pages site
         uses: actions/upload-pages-artifact@v3.0.1
