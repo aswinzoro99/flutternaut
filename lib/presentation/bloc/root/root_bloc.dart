@@ -8,11 +8,11 @@ part 'root_state.dart';
 class RootBloc extends Bloc<RootEvent, RootState> {
   RootBloc() : super(const RootState()) {
     on<OnNavigationBarItemChanged>(
-      (event, emit) => _handleOnNavigationBarItenChangedEvent(event, emit),
+      (event, emit) => _handleOnNavigationBarItemChangedEvent(event, emit),
     );
   }
 
-  Future<void> _handleOnNavigationBarItenChangedEvent(
+  Future<void> _handleOnNavigationBarItemChangedEvent(
     OnNavigationBarItemChanged event,
     Emitter<RootState> emit,
   ) async {

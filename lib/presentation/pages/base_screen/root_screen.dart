@@ -7,6 +7,7 @@ import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/enum/navbar_type.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/presentation/bloc/contacts/contacts_bloc.dart';
 import 'package:flutternaut_frontend_webapp/presentation/bloc/root/root_bloc.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/about_screen/about_screen.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
@@ -27,8 +28,11 @@ class RootScreen extends BaseScreen implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider.value(
-      value: locate<RootBloc>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: locate<RootBloc>()),
+        BlocProvider.value(value: locate<ContactsBloc>()),
+      ],
       child: this,
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutternaut_frontend_webapp/presentation/bloc/contacts/contacts_bloc.dart';
 import 'package:flutternaut_frontend_webapp/presentation/bloc/root/root_bloc.dart';
 import 'package:flutternaut_frontend_webapp/route/app_router.dart';
 import 'package:flutternaut_frontend_webapp/utils/dialog_manager.dart';
@@ -12,5 +13,6 @@ Future<void> setupInjector() async {
     ..registerSingleton(AppRouter())
     ..registerLazySingleton(RootBloc.new)
     ..registerLazySingleton(DialogManager.new)
+    ..registerLazySingleton(ContactsBloc.new)
     ..registerLazySingleton(FileUploadManager.new);
 }

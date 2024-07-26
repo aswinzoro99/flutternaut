@@ -5,11 +5,11 @@ import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
 import 'package:flutternaut_frontend_webapp/enum/socials.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/presentation/bloc/contacts/contacts_bloc.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_button_with_icon.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_title_widget.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/locator.dart';
-import 'package:rxdart/rxdart.dart';
 
 import '../../../common/config.dart';
 import '../../../enum/textfield_type.dart';
@@ -24,8 +24,14 @@ class ContactsScreen extends BaseScreen {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
-  final BehaviorSubject<File?> uploadedFile =
-      BehaviorSubject<File?>.seeded(null);
+  late final ContactsBloc bloc;
+
+  @override
+  void dispose() {
+    bloc = locate<ContactsBloc>();
+    bloc.uploadedFile.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +138,11 @@ class _ContactsScreenState extends State<ContactsScreen> {
     return Flexible(
       child: TextField(
         cursorColor: backgroundColor,
+        controller: type.isName
+            ? bloc.nameTC
+            : type.isEmail
+                ? bloc.emailTC
+                : bloc.messageTC,
         style:
             context.textTheme.titleMedium?.copyWith(color: secondaryTextColor),
         maxLines: type.isMessage ? 5 : 1,
@@ -163,7 +174,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
 
   StreamBuilder<File?> buildFileUploader() {
     return StreamBuilder<File?>(
-        stream: uploadedFile.stream,
+        stream: bloc.uploadedFile.stream,
         builder: (context, snapshot) {
           return Row(
             children: [
@@ -175,10 +186,10 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 onPressed: () async {
                   final file = await locate<FileUploadManager>().pickFile();
 
-                  uploadedFile.add(file);
+                  bloc.uploadedFile.add(file);
                 },
                 child: Text(
-                  uploadedFile.hasValue
+                  bloc.uploadedFile.hasValue
                       ? context.loc.OneFileUploaded
                       : context.loc.attachFiles,
                   style: context.textTheme.titleSmall!
