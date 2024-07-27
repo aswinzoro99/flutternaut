@@ -28,7 +28,7 @@ jobs:
         with:
           channel: 'stable'
 
-      - run: flutter pub get
+      - run: flutter pub get 
 
       - run: flutter build web --web-renderer canvaskit --release
           
