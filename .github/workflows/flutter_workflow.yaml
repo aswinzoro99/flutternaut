@@ -32,7 +32,7 @@ jobs:
           
       - run: flutter pub get
 
-      - run: flutter build web --web-renderer canvaskit --release --base-href '/flutternaut'
+      - run: flutter build web --web-renderer canvaskit --release --base-href /flutternaut
       
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
