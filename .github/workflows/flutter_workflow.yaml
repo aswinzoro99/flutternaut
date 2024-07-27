@@ -62,4 +62,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4.0.5
         with:
-          branch: gh-pages  # Ensure this is the correct branch for your Pages deployment
+          artifact_name: gh-pages
