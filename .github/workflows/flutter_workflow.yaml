@@ -43,6 +43,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          
       - run: flutter pub get
 
       - run: flutter build web --web-renderer canvaskit --release
