@@ -10,6 +10,8 @@ class Config {
   static const String experience = '04+';
   static const String clientsCount = '10+';
   static const String email = 'aswin1999ranjith@gmail.com';
+  static const String address =
+      '''7th Floor Awfis,Arihant Technopolis, Kandanchavadi,Chennai,Taminnadu, 600096''';
   static const String location = 'Chennai, India';
   static const String instagramLink =
       "https://www.instagram.com/aswin_ranjith/";

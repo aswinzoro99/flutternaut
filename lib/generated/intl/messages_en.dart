@@ -29,8 +29,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'"),
         "aboutScreenDesc3": MessageLookupByLibrary.simpleMessage(
             "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”"),
+        "anyProject": MessageLookupByLibrary.simpleMessage("ANY PROJECT?"),
         "aswinRanjith":
             MessageLookupByLibrary.simpleMessage("ASWIN RANJITH..."),
+        "attachFiles": MessageLookupByLibrary.simpleMessage("ATTACH FILES"),
         "basedIn": MessageLookupByLibrary.simpleMessage("based in"),
         "blogs": MessageLookupByLibrary.simpleMessage("BLOGS"),
         "clientsInIndia":
@@ -44,25 +46,37 @@ class MessageLookup extends MessageLookupByLibrary {
         "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
         "downloadMyResume":
             MessageLookupByLibrary.simpleMessage("Download my resume"),
+        "emailCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Email cannot be empty"),
         "expand": MessageLookupByLibrary.simpleMessage("Expand"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
+        "genericErrorMessage":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "home": MessageLookupByLibrary.simpleMessage("HOME"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Aswin."),
         "india": MessageLookupByLibrary.simpleMessage("India"),
         "letsTalkWithMe":
             MessageLookupByLibrary.simpleMessage("Let’s talk with me"),
+        "messageCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Message cannot be empty"),
         "minimise": MessageLookupByLibrary.simpleMessage("Minimise"),
         "myExperience": MessageLookupByLibrary.simpleMessage("MY EXPERIENCE"),
         "myNameIs": MessageLookupByLibrary.simpleMessage("MY NAME IS"),
         "mySpecialities":
             MessageLookupByLibrary.simpleMessage("MY SPECIALITIES"),
+        "nameCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Name cannot be empty"),
         "niceToMeetYou":
             MessageLookupByLibrary.simpleMessage("Nice to meet you!"),
+        "oneFileUploaded":
+            MessageLookupByLibrary.simpleMessage("1 file uploaded!"),
+        "reachOutMe": MessageLookupByLibrary.simpleMessage("REACH OUT ME"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(
             "Only Available in DESKTOP!!!"),
         "services": MessageLookupByLibrary.simpleMessage("SERVICES"),
         "softwareEngineer":
             MessageLookupByLibrary.simpleMessage("Software Engineer"),
+        "submitNow": MessageLookupByLibrary.simpleMessage("Submit now"),
         "underDevelopment":
             MessageLookupByLibrary.simpleMessage("Under Development"),
         "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),

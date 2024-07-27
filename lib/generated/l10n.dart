@@ -90,11 +90,31 @@ class S {
     );
   }
 
+  /// `ANY PROJECT?`
+  String get anyProject {
+    return Intl.message(
+      'ANY PROJECT?',
+      name: 'anyProject',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `ASWIN RANJITH...`
   String get aswinRanjith {
     return Intl.message(
       'ASWIN RANJITH...',
       name: 'aswinRanjith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ATTACH FILES`
+  String get attachFiles {
+    return Intl.message(
+      'ATTACH FILES',
+      name: 'attachFiles',
       desc: '',
       args: [],
     );
@@ -140,6 +160,26 @@ class S {
     );
   }
 
+  /// `Copied to clipboard`
+  String get copiedToClipboard {
+    return Intl.message(
+      'Copied to clipboard',
+      name: 'copiedToClipboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy`
+  String get copy {
+    return Intl.message(
+      'Copy',
+      name: 'copy',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Copyright ©2023 Aswin Ranjith. All right reserved.`
   String get copyrightDesc {
     return Intl.message(
@@ -155,6 +195,36 @@ class S {
     return Intl.message(
       'Download CV',
       name: 'downloadCv',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download my resume`
+  String get downloadMyResume {
+    return Intl.message(
+      'Download my resume',
+      name: 'downloadMyResume',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expand`
+  String get expand {
+    return Intl.message(
+      'Expand',
+      name: 'expand',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Experience`
+  String get experience {
+    return Intl.message(
+      'Experience',
+      name: 'experience',
       desc: '',
       args: [],
     );
@@ -200,6 +270,26 @@ class S {
     );
   }
 
+  /// `Minimise`
+  String get minimise {
+    return Intl.message(
+      'Minimise',
+      name: 'minimise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MY EXPERIENCE`
+  String get myExperience {
+    return Intl.message(
+      'MY EXPERIENCE',
+      name: 'myExperience',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `MY NAME IS`
   String get myNameIs {
     return Intl.message(
@@ -210,11 +300,41 @@ class S {
     );
   }
 
+  /// `MY SPECIALITIES`
+  String get mySpecialities {
+    return Intl.message(
+      'MY SPECIALITIES',
+      name: 'mySpecialities',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Nice to meet you!`
   String get niceToMeetYou {
     return Intl.message(
       'Nice to meet you!',
       name: 'niceToMeetYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1 file uploaded!`
+  String get oneFileUploaded {
+    return Intl.message(
+      '1 file uploaded!',
+      name: 'oneFileUploaded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `REACH OUT ME`
+  String get reachOutMe {
+    return Intl.message(
+      'REACH OUT ME',
+      name: 'reachOutMe',
       desc: '',
       args: [],
     );
@@ -245,6 +365,16 @@ class S {
     return Intl.message(
       'Software Engineer',
       name: 'softwareEngineer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit now`
+  String get submitNow {
+    return Intl.message(
+      'Submit now',
+      name: 'submitNow',
       desc: '',
       args: [],
     );
@@ -290,81 +420,41 @@ class S {
     );
   }
 
-  /// `Copy`
-  String get copy {
+  /// `Name cannot be empty`
+  String get nameCannotBeEmpty {
     return Intl.message(
-      'Copy',
-      name: 'copy',
+      'Name cannot be empty',
+      name: 'nameCannotBeEmpty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Copied to clipboard`
-  String get copiedToClipboard {
+  /// `Email cannot be empty`
+  String get emailCannotBeEmpty {
     return Intl.message(
-      'Copied to clipboard',
-      name: 'copiedToClipboard',
+      'Email cannot be empty',
+      name: 'emailCannotBeEmpty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Download my resume`
-  String get downloadMyResume {
+  /// `Message cannot be empty`
+  String get messageCannotBeEmpty {
     return Intl.message(
-      'Download my resume',
-      name: 'downloadMyResume',
+      'Message cannot be empty',
+      name: 'messageCannotBeEmpty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Experience`
-  String get experience {
+  /// `Something went wrong`
+  String get genericErrorMessage {
     return Intl.message(
-      'Experience',
-      name: 'experience',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `MY EXPERIENCE`
-  String get myExperience {
-    return Intl.message(
-      'MY EXPERIENCE',
-      name: 'myExperience',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `MY SPECIALITIES`
-  String get mySpecialities {
-    return Intl.message(
-      'MY SPECIALITIES',
-      name: 'mySpecialities',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Expand`
-  String get expand {
-    return Intl.message(
-      'Expand',
-      name: 'expand',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Minimise`
-  String get minimise {
-    return Intl.message(
-      'Minimise',
-      name: 'minimise',
+      'Something went wrong',
+      name: 'genericErrorMessage',
       desc: '',
       args: [],
     );
