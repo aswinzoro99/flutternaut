@@ -1,37 +1,52 @@
-name: Flutter
+name: build-test-deploy
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
-  
-    permissions:
-      contents: write
-      pages: write     
-      id-token: write
-  
-    environment:
-      name: production
-      url: ${{ steps.deployment.outputs.page_url }}
-      
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-
-      - run: flutter pub get 
+          
+      - run: flutter pub get
 
       - run: flutter build web --web-renderer canvaskit --release
+      
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write  
+      id-token: write
+
+    environment:
+      name: production
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           
+      - run: flutter pub get
+
+      - run: flutter build web --web-renderer canvaskit --release
+      
       - name: configure github pages
         uses: actions/configure-pages@v3
         with:
@@ -48,4 +63,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: build/web
+          
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
     
