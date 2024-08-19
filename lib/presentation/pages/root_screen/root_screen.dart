@@ -10,6 +10,7 @@ import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
 import 'package:flutternaut_frontend_webapp/presentation/bloc/contacts/contacts_bloc.dart';
 import 'package:flutternaut_frontend_webapp/presentation/bloc/root/root_bloc.dart';
 import 'package:flutternaut_frontend_webapp/presentation/pages/about_screen/about_screen.dart';
+import 'package:flutternaut_frontend_webapp/presentation/pages/works_screen/works_screen.dart';
 import 'package:flutternaut_frontend_webapp/theme/light_theme_colors.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 import 'package:universal_html/html.dart' as html;
@@ -138,12 +139,7 @@ class _RootScreenState extends BaseState<RootScreen> {
                   case NavbarType.services:
                     return const ServicesScreen();
                   case NavbarType.works:
-                    return Center(
-                      child: Text(
-                        context.loc.underDevelopment,
-                        style: context.textTheme.bodyLarge,
-                      ),
-                    );
+                    return const WorksScreen();
                   case NavbarType.blogs:
                     return Center(
                       child: Text(

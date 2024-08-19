@@ -459,6 +459,26 @@ class S {
       args: [],
     );
   }
+
+  /// `RECENT PROJECT`
+  String get recentProject {
+    return Intl.message(
+      'RECENT PROJECT',
+      name: 'recentProject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `work`
+  String get work {
+    return Intl.message(
+      'work',
+      name: 'work',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

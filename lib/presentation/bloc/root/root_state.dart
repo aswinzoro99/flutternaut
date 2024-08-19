@@ -3,7 +3,7 @@ part of 'root_bloc.dart';
 class RootState extends Equatable {
   const RootState({
     this.status = RootScreenStatus.initial,
-    this.selectedItem = NavbarType.home,
+    this.selectedItem = NavbarType.works,
   });
 
   final RootScreenStatus status;

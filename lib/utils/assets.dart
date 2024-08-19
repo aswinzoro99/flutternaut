@@ -15,4 +15,9 @@ class Assets {
   static const String location = '$_basePath/location.png';
   static const String quotes = '$_basePath/quotes.png';
   static const String attach = '$_basePath/attach.png';
+  static const String work1 = '$_basePath/work_1.png';
+  static const String work2 = '$_basePath/work_2.png';
+  static const String work3 = '$_basePath/work_3.png';
+  static const String work4 = '$_basePath/work_4.png';
+  static const String northEastClear = '$_basePath/northeast_clear.png';
 }
