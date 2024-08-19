@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutternaut_frontend_webapp/presentation/pages/base_screen/root_screen.dart'
+import 'package:flutternaut_frontend_webapp/presentation/pages/root_screen/root_screen.dart'
     as _i1;
 
 abstract class $AppRouter extends _i2.RootStackRouter {
@@ -20,7 +20,7 @@ abstract class $AppRouter extends _i2.RootStackRouter {
     RootRoute.name: (routeData) {
       return _i2.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i1.RootScreen(),
+        child: _i2.WrappedRoute(child: const _i1.RootScreen()),
       );
     }
   };

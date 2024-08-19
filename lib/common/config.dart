@@ -1,6 +1,8 @@
 import 'package:flutternaut_frontend_webapp/domain/entity/services_screen/services.dart';
 
 import '../domain/entity/about_screen/experience.dart';
+import '../domain/entity/works_screen/works.dart';
+import '../utils/assets.dart';
 
 class Config {
   static const int responsiveTriggerWidth = 1300;
@@ -62,6 +64,29 @@ class Config {
           '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
       detailedDescription:
           '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+    ),
+  ];
+
+  static List<Work> workList = [
+    Work(
+      projectName: 'Flutternaut',
+      minorDescription: 'Portfolio Website',
+      assetPath: Assets.work1,
+    ),
+    Work(
+      projectName: 'CubePlus by Tradejini',
+      minorDescription: 'Trading app',
+      assetPath: Assets.work2,
+    ),
+    Work(
+      projectName: 'e-KYC by Tradejini',
+      minorDescription: 'Onboarding app',
+      assetPath: Assets.work3,
+    ),
+    Work(
+      projectName: 'Flutternaut',
+      minorDescription: 'Portfolio Website',
+      assetPath: Assets.work4,
     ),
   ];
 }

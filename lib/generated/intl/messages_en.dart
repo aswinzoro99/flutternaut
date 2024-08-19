@@ -71,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "oneFileUploaded":
             MessageLookupByLibrary.simpleMessage("1 file uploaded!"),
         "reachOutMe": MessageLookupByLibrary.simpleMessage("REACH OUT ME"),
+        "recentProject": MessageLookupByLibrary.simpleMessage("RECENT PROJECT"),
         "responsiveWindowMessage": MessageLookupByLibrary.simpleMessage(
             "Only Available in DESKTOP!!!"),
         "services": MessageLookupByLibrary.simpleMessage("SERVICES"),
@@ -80,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "underDevelopment":
             MessageLookupByLibrary.simpleMessage("Under Development"),
         "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),
+        "work": MessageLookupByLibrary.simpleMessage("work"),
         "works": MessageLookupByLibrary.simpleMessage("WORKS"),
         "yearsExperience":
             MessageLookupByLibrary.simpleMessage("Years experience...")

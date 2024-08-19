@@ -31,6 +31,7 @@ dependencies:
 
 dev_dependencies:
   auto_route_generator: 8.1.0
+  flutter_launcher_icons: "^0.13.1"
   flutter_test:
     sdk: flutter
 
@@ -73,3 +74,10 @@ flutter:
   uses-material-design: true
 flutter_intl:
   enabled: true
+
+flutter_launcher_icons:
+  web:
+    generate: true
+    image_path: "assets/icons/flutternaut.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"
