@@ -5,7 +5,7 @@ import '../domain/entity/works_screen/works.dart';
 import '../utils/assets.dart';
 
 class Config {
-  static const int responsiveTriggerWidth = 1300;
+  static const int responsiveTriggerWidth = 1100;
   static const String userName = 'ASWIN RANJITH';
   static const String mobNo = '+91 81292 48586';
   static const String age = '25 yrs';
