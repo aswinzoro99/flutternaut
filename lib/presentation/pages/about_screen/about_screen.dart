@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
@@ -12,6 +13,7 @@ import '../../../utils/assets.dart';
 import '../widgets/contact_widget.dart';
 import '../widgets/custom_button_with_icon.dart';
 
+@RoutePage()
 class AboutScreen extends BaseScreen {
   const AboutScreen({super.key});
 

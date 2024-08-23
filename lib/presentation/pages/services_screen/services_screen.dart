@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
@@ -7,6 +8,7 @@ import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_ti
 
 import 'services_widget.dart';
 
+@RoutePage()
 class ServicesScreen extends BaseScreen {
   const ServicesScreen({super.key});
 

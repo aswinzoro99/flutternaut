@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
@@ -7,6 +8,7 @@ import '../../../common/config.dart';
 import '../../../common/dimensions.dart';
 import '../widgets/custom_title_widget.dart';
 
+@RoutePage()
 class WorksScreen extends BaseScreen {
   const WorksScreen({super.key});
 
