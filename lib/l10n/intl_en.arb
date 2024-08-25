@@ -41,5 +41,6 @@
   "messageCannotBeEmpty": "Message cannot be empty",
   "genericErrorMessage": "Something went wrong",
   "recentProject": "RECENT PROJECT",
-  "work": "work"
+  "work": "work",
+  "clickToKnowMore": "Click to know more"
 }

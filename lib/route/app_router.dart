@@ -39,5 +39,9 @@ class AppRouter extends $AppRouter {
             ),
           ],
         ),
+        AutoRoute(
+          page: WorkDetailsRoute.page,
+          path: Routes.workDetails,
+        ),
       ];
 }

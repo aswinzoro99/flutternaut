@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "attachFiles": MessageLookupByLibrary.simpleMessage("ATTACH FILES"),
         "basedIn": MessageLookupByLibrary.simpleMessage("based in"),
         "blogs": MessageLookupByLibrary.simpleMessage("BLOGS"),
+        "clickToKnowMore":
+            MessageLookupByLibrary.simpleMessage("Click to know more"),
         "clientsInIndia":
             MessageLookupByLibrary.simpleMessage("Clients in India..."),
         "contact": MessageLookupByLibrary.simpleMessage("CONTACT"),

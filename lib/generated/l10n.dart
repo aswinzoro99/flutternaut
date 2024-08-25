@@ -479,6 +479,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Click to know more`
+  String get clickToKnowMore {
+    return Intl.message(
+      'Click to know more',
+      name: 'clickToKnowMore',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

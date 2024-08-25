@@ -4,6 +4,7 @@ class Routes {
   static const String about = 'about';
   static const String services = 'services';
   static const String works = 'works';
+  static const String workDetails = '/work-details';
   static const String blogs = 'blogs';
   static const String contact = 'contact';
 }

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/route/app_router.gr.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
 import '../../../common/config.dart';
@@ -51,11 +52,11 @@ class _WorksScreenState extends BaseState<WorksScreen> {
 
     return Material(
       child: Tooltip(
-        message: 'Click to know more',
+        message: context.loc.clickToKnowMore,
         child: InkWell(
           hoverColor: Colors.transparent,
           onTap: () {
-            return;
+            appRouter.push(WorkDetailsRoute(workItem: work));
           },
           child: Row(
             children: [
@@ -74,11 +75,20 @@ class _WorksScreenState extends BaseState<WorksScreen> {
                       maxLines: 3,
                     ),
                     const Spacer(),
-                    Image.asset(Assets.northEastClear, height: iconSizeXXL),
+                    Image.asset(
+                      Assets.northEastClear,
+                      height: iconSizeXXL,
+                    ),
                   ],
                 ),
               ),
-              Image.asset(work.assetPath, height: 190),
+              Hero(
+                tag: work.assetPath,
+                child: Image.asset(
+                  work.assetPath,
+                  height: 190,
+                ),
+              ),
             ],
           ),
         ),
