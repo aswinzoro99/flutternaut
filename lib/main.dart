@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'common/constants.dart';
 import 'generated/l10n.dart';
+import 'url_strategy/url_strategy_handler.dart';
 
 void main() {
   runApp(const FlutternautApp());
@@ -29,6 +30,7 @@ class _FlutternautAppState extends BaseState<FlutternautApp> {
   @override
   Widget build(BuildContext context) {
     GoogleFonts.config.allowRuntimeFetching = false;
+    UrlStrategyHandler().setUrlStrategy();
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,

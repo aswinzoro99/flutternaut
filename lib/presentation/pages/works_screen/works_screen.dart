@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
-import 'package:flutternaut_frontend_webapp/route/app_router.gr.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
 import '../../../common/config.dart';
 import '../../../common/dimensions.dart';
+import '../../../route/app_router.gr.dart';
 import '../widgets/custom_title_widget.dart';
 
 @RoutePage()
@@ -65,8 +65,10 @@ class _WorksScreenState extends BaseState<WorksScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(work.minorDescription,
-                        style: context.textTheme.bodySmall),
+                    Text(
+                      work.minorDescription,
+                      style: context.textTheme.bodySmall,
+                    ),
                     SizedBox(height: paddingMedium1),
                     Text(
                       work.projectName,
