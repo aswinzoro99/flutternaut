@@ -1,12 +1,13 @@
+import 'package:animations/animations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+import 'package:flutternaut_frontend_webapp/presentation/pages/works_screen/work_details_widget.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
 import '../../../common/config.dart';
 import '../../../common/dimensions.dart';
-import '../../../route/app_router.gr.dart';
 import '../widgets/custom_title_widget.dart';
 
 @RoutePage()
@@ -35,7 +36,7 @@ class _WorksScreenState extends BaseState<WorksScreen> {
               itemCount: Config.workList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 2.5,
+                childAspectRatio: 2.3,
                 mainAxisSpacing: paddingMedium1,
                 crossAxisSpacing: paddingXL,
               ),
@@ -47,17 +48,13 @@ class _WorksScreenState extends BaseState<WorksScreen> {
     );
   }
 
-  Material buildGridViewItem(BuildContext context, int index) {
+  OpenContainer<Never> buildGridViewItem(BuildContext context, int index) {
     final work = Config.workList[index];
 
-    return Material(
-      child: Tooltip(
-        message: context.loc.clickToKnowMore,
-        child: InkWell(
-          hoverColor: Colors.transparent,
-          onTap: () {
-            appRouter.push(WorkDetailsRoute(workItem: work));
-          },
+    return OpenContainer(
+      closedBuilder: (context, action) {
+        return Padding(
+          padding: EdgeInsets.all(bodyPadding),
           child: Row(
             children: [
               Expanded(
@@ -93,8 +90,11 @@ class _WorksScreenState extends BaseState<WorksScreen> {
               ),
             ],
           ),
-        ),
-      ),
+        );
+      },
+      openBuilder: (context, action) {
+        return WorkDetailsScreen(workItem: work);
+      },
     );
   }
 }

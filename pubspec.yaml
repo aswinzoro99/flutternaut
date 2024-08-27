@@ -20,6 +20,7 @@ dependencies:
   cupertino_icons: 1.0.6
   equatable: 2.0.5
   file_picker: 8.0.6
+  flutter_animate: 4.5.0
   flutter_bloc: 8.1.4
   flutter_email_sender: 6.0.3
   flutter_localizations:

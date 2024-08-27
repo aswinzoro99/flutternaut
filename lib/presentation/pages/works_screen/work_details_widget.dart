@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/domain/entity/works_screen/works.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
+
+import '../../../common/dimensions.dart';
 
 @RoutePage()
 class WorkDetailsScreen extends BaseScreen {
@@ -21,26 +24,44 @@ class _WorkDetailsWidgetState extends State<WorkDetailsScreen> {
     return Theme(
       data: Theme.of(context).copyWith(hoverColor: Colors.transparent),
       child: Scaffold(
-        body: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () => Navigator.pop(context),
-                child: Image.asset(
-                  widget.workItem.assetPath,
-                  height: 300,
+        body: Padding(
+          padding: EdgeInsets.all(paddingXXXL),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: Image.asset(widget.workItem.assetPath, height: 300),
                 ),
               ),
-            ),
-            Text(
-              widget.workItem.projectName,
-              style: context.textTheme.headlineMedium
-                  ?.copyWith(fontWeight: FontWeight.w500),
-              maxLines: 3,
-            ),
-          ],
+              Expanded(
+                  flex: 6,
+                  child: Column(
+                    children: [
+                      SizedBox(height: paddingMedium1),
+                      Text(
+                        widget.workItem.projectName,
+                        style: context.textTheme.headlineLarge
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                        maxLines: 3,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              widget.workItem.details,
+                              style: context.textTheme.bodyLarge,
+                              maxLines: 10,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ].animate(interval: 400.ms).fade(duration: 300.ms),
+                  )),
+            ],
+          ),
         ),
       ),
     );

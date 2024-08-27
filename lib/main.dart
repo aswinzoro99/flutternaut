@@ -10,6 +10,7 @@ import 'generated/l10n.dart';
 import 'url_strategy/url_strategy_handler.dart';
 
 void main() {
+  UrlStrategyHandler().setUrlStrategy();
   runApp(const FlutternautApp());
 }
 
@@ -30,7 +31,6 @@ class _FlutternautAppState extends BaseState<FlutternautApp> {
   @override
   Widget build(BuildContext context) {
     GoogleFonts.config.allowRuntimeFetching = false;
-    UrlStrategyHandler().setUrlStrategy();
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
