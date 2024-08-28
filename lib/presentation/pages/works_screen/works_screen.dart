@@ -8,6 +8,7 @@ import 'package:flutternaut_frontend_webapp/utils/assets.dart';
 
 import '../../../common/config.dart';
 import '../../../common/dimensions.dart';
+import '../widgets/custom_button_with_icon.dart';
 import '../widgets/custom_title_widget.dart';
 
 @RoutePage()
@@ -21,30 +22,42 @@ class WorksScreen extends BaseScreen {
 class _WorksScreenState extends BaseState<WorksScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(paddingXXXL),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomTitleWidget(
-            title: context.loc.recentProject,
-            subTitle: context.loc.work,
-          ),
-          SizedBox(height: paddingXXXL),
-          Expanded(
-            child: GridView.builder(
-              itemCount: Config.workList.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 2.3,
-                mainAxisSpacing: paddingMedium1,
-                crossAxisSpacing: paddingXL,
-              ),
-              itemBuilder: buildGridViewItem,
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: true,
+          child: Padding(
+            padding: EdgeInsets.all(paddingXXXL),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomTitleWidget(
+                  title: context.loc.recentProject,
+                  subTitle: context.loc.work,
+                ),
+                SizedBox(height: paddingXXXL),
+                Expanded(
+                  child: GridView.builder(
+                    itemCount: Config.workList.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 2.3,
+                      mainAxisSpacing: paddingMedium1,
+                      crossAxisSpacing: paddingXL,
+                    ),
+                    itemBuilder: buildGridViewItem,
+                  ),
+                ),
+                SizedBox(height: paddingMedium1),
+                CustomButtonWithIcon(
+                  onPressed: () {},
+                  text: context.loc.loadMore,
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -52,6 +65,7 @@ class _WorksScreenState extends BaseState<WorksScreen> {
     final work = Config.workList[index];
 
     return OpenContainer(
+      tappable: false,
       closedBuilder: (context, action) {
         return Padding(
           padding: EdgeInsets.all(bodyPadding),
@@ -81,13 +95,7 @@ class _WorksScreenState extends BaseState<WorksScreen> {
                   ],
                 ),
               ),
-              Hero(
-                tag: work.assetPath,
-                child: Image.asset(
-                  work.assetPath,
-                  height: 190,
-                ),
-              ),
+              Image.asset(work.assetPath, height: 190),
             ],
           ),
         );

@@ -59,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "india": MessageLookupByLibrary.simpleMessage("India"),
         "letsTalkWithMe":
             MessageLookupByLibrary.simpleMessage("Let’s talk with me"),
+        "loadMore": MessageLookupByLibrary.simpleMessage("Load more"),
         "messageCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Message cannot be empty"),
         "minimise": MessageLookupByLibrary.simpleMessage("Minimise"),

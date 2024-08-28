@@ -42,5 +42,6 @@
   "genericErrorMessage": "Something went wrong",
   "recentProject": "RECENT PROJECT",
   "work": "work",
-  "clickToKnowMore": "Click to know more"
+  "clickToKnowMore": "Click to know more",
+  "loadMore": "Load more"
 }

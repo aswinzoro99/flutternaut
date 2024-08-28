@@ -372,7 +372,6 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                       CustomButtonWithIcon(
                         text: context.loc.downloadMyResume,
                         onPressed: downloadResume,
-                        margin: EdgeInsets.only(right: paddingXXXL * 3.2),
                       ),
                     ],
                   ),

@@ -136,7 +136,6 @@ class _ContactsScreenState extends State<ContactsScreen> {
             onPressed: () {
               bloc.add(OnSubmitPressed());
             },
-            margin: EdgeInsets.only(right: 4.5 * paddingXXXL),
           )
         ],
       ),
