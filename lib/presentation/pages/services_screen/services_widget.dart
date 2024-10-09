@@ -73,13 +73,14 @@ class _ServicesWidgetState extends BaseState<ServicesWidget> {
                     ),
                   ),
                 SizedBox(width: paddingLarge1),
-                Expanded(
-                  child: Text(
-                    widget.description,
-                    style: context.textTheme.bodyLarge,
-                    maxLines: 3,
+                if (!expanded.value)
+                  Expanded(
+                    child: Text(
+                      widget.description,
+                      style: context.textTheme.bodyLarge,
+                      maxLines: 6,
+                    ),
                   ),
-                ),
                 buildAddOrMinusIcon(expanded.value),
               ],
             ),
@@ -87,8 +88,8 @@ class _ServicesWidgetState extends BaseState<ServicesWidget> {
             if (expanded.value)
               Text(
                 widget.detailedDescription,
-                style: context.textTheme.bodySmall,
-                maxLines: 3,
+                style: context.textTheme.bodySmall?.copyWith(fontSize: sp14),
+                maxLines: 6,
               ),
             SizedBox(height: paddingRegular1),
             buildHorizontalDivider(0.6, Colors.black12),
@@ -115,9 +116,10 @@ class _ServicesWidgetState extends BaseState<ServicesWidget> {
       child: TextButton(
         onPressed: () => expanded.add(!expanded.value),
         child: Text(
-          (isExpanded ?? false) ? '-' : '+',
-          style: context.textTheme.headlineLarge?.copyWith(
-            fontWeight: FontWeight.w200,
+          (isExpanded ?? false) ? 'Minimize' : 'Expand',
+          style: context.textTheme.titleSmall?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: primaryTextColor,
           ),
         ),
       ),

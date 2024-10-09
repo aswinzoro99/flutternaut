@@ -21,14 +21,21 @@ class _ServicesScreenState extends BaseState<ServicesScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(paddingXXXL),
-      child: Column(
-        children: [
-          CustomTitleWidget(
-            title: context.loc.mySpecialities,
-            subTitle: context.loc.services,
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                CustomTitleWidget(
+                  title: context.loc.mySpecialities,
+                  subTitle: context.loc.services,
+                ),
+                SizedBox(height: paddingLarge1),
+                buildServicesList(),
+              ],
+            ),
           ),
-          SizedBox(height: paddingLarge1),
-          buildServicesList(),
         ],
       ),
     );
