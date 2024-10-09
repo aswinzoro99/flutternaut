@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/dimensions.dart';
@@ -16,6 +17,7 @@ import '../../../enum/textfield_type.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/file_upload_manager.dart';
 
+@RoutePage()
 class ContactsScreen extends BaseScreen {
   const ContactsScreen({super.key});
 
@@ -134,7 +136,6 @@ class _ContactsScreenState extends State<ContactsScreen> {
             onPressed: () {
               bloc.add(OnSubmitPressed());
             },
-            margin: EdgeInsets.only(right: 4.5 * paddingXXXL),
           )
         ],
       ),

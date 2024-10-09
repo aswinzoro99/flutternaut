@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
@@ -10,8 +11,8 @@ import 'package:universal_html/html.dart' as html;
 import '../../../theme/light_theme_colors.dart';
 import '../../../utils/assets.dart';
 import '../widgets/contact_widget.dart';
-import '../widgets/custom_button_with_icon.dart';
 
+@RoutePage()
 class AboutScreen extends BaseScreen {
   const AboutScreen({super.key});
 
@@ -164,6 +165,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
           buildHorizontalDivider(dp1, Colors.black12),
           SizedBox(height: paddingLarge1),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               buildExperience(),
               SizedBox(width: paddingMedium1),
@@ -300,7 +302,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
           child: Container(
             padding: EdgeInsets.all(paddingMedium1),
             color: secondaryColor,
-            height: dp120,
+            height: dp160,
             child: Row(
               children: [
                 Image.asset(
@@ -312,11 +314,11 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                 Expanded(
                   child: Text(
                     context.loc.aboutScreenDesc3,
-                    style: context.textTheme.titleSmall!.copyWith(
+                    style: context.textTheme.bodySmall!.copyWith(
                       fontStyle: FontStyle.italic,
                       color: secondaryTextColor,
                     ),
-                    maxLines: 3,
+                    maxLines: 6,
                   ),
                 ),
               ],
@@ -353,7 +355,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                           color: secondaryTextColor,
                         ),
                       ),
-                      SizedBox(height: paddingMedium1),
+                      SizedBox(height: paddingMedium3),
                       Text(
                         context.loc.myExperience,
                         style: context.textTheme.headlineLarge?.copyWith(
@@ -361,20 +363,16 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: paddingMedium1),
+                      SizedBox(height: paddingMedium3),
                       Text(
-                        context.loc.aboutScreenDesc1,
-                        style: context.textTheme.titleSmall,
-                      ),
-                      SizedBox(height: paddingLarge1),
-                      CustomButtonWithIcon(
-                        text: context.loc.downloadMyResume,
-                        onPressed: downloadResume,
-                        margin: EdgeInsets.only(right: paddingXXXL * 3.2),
+                        context.loc.withOver4YearsOfExperienceInFlutterAndIos,
+                        style: context.textTheme.bodyMedium
+                            ?.copyWith(fontSize: sp12),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(width: dp10),
                 Expanded(
                   child: Column(
                     children: getExperienceList(),
@@ -403,7 +401,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: paddingMedium1),
+            SizedBox(height: paddingMedium2),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -421,7 +419,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                 ),
               ],
             ),
-            SizedBox(height: paddingMedium1),
+            SizedBox(height: paddingMedium2),
             Text(
               exp.position.toUpperCase(),
               style: context.textTheme.titleLarge?.copyWith(
@@ -430,7 +428,7 @@ class _AboutScreenState extends BaseState<AboutScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: paddingMedium1),
+            SizedBox(height: paddingMedium2),
             buildHorizontalDivider(0.2, secondaryTextColor),
           ],
         ),

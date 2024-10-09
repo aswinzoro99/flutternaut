@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/common/config.dart';
@@ -7,6 +8,7 @@ import 'package:flutternaut_frontend_webapp/presentation/pages/widgets/custom_ti
 
 import 'services_widget.dart';
 
+@RoutePage()
 class ServicesScreen extends BaseScreen {
   const ServicesScreen({super.key});
 
@@ -19,14 +21,21 @@ class _ServicesScreenState extends BaseState<ServicesScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(paddingXXXL),
-      child: Column(
-        children: [
-          CustomTitleWidget(
-            title: context.loc.mySpecialities,
-            subTitle: context.loc.services,
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                CustomTitleWidget(
+                  title: context.loc.mySpecialities,
+                  subTitle: context.loc.services,
+                ),
+                SizedBox(height: paddingLarge1),
+                buildServicesList(),
+              ],
+            ),
           ),
-          SizedBox(height: paddingLarge1),
-          buildServicesList(),
         ],
       ),
     );

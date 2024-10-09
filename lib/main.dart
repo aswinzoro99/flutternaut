@@ -7,8 +7,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'common/constants.dart';
 import 'generated/l10n.dart';
+import 'url_strategy/url_strategy_handler.dart';
 
 void main() {
+  UrlStrategyHandler().setUrlStrategy();
   runApp(const FlutternautApp());
 }
 

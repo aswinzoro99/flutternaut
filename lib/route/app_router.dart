@@ -11,6 +11,37 @@ class AppRouter extends $AppRouter {
           page: RootRoute.page,
           path: Routes.root,
           initial: true,
+          children: [
+            AutoRoute(
+              page: HomeRoute.page,
+              path: Routes.home,
+              initial: false,
+            ),
+            AutoRoute(
+              page: AboutRoute.page,
+              path: Routes.about,
+              initial: false,
+            ),
+            AutoRoute(
+              page: ServicesRoute.page,
+              path: Routes.services,
+              initial: false,
+            ),
+            AutoRoute(
+              page: WorksRoute.page,
+              path: Routes.works,
+              initial: false,
+            ),
+            AutoRoute(
+              page: ContactsRoute.page,
+              path: Routes.contact,
+              initial: false,
+            ),
+          ],
+        ),
+        AutoRoute(
+          page: WorkDetailsRoute.page,
+          path: Routes.workDetails,
         ),
       ];
 }

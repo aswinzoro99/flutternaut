@@ -60,30 +60,30 @@ class S {
     );
   }
 
-  /// `''Hello there! My name is Aswin Ranjith am a Software Engineer , and I'm very passionate and dedicated to my work.''`
+  /// `"Hello there! My name is Aswin Ranjith. I am a Flutter application developer with extensive experience in building mobile and web applications using Flutter SDK, Bloc architecture, and iOS development tools. I am passionate about crafting efficient, scalable solutions and dedicated to delivering high-quality user experiences."`
   String get aboutScreenDesc1 {
     return Intl.message(
-      '\'\'Hello there! My name is Aswin Ranjith am a Software Engineer , and I\'m very passionate and dedicated to my work.\'\'',
+      '"Hello there! My name is Aswin Ranjith. I am a Flutter application developer with extensive experience in building mobile and web applications using Flutter SDK, Bloc architecture, and iOS development tools. I am passionate about crafting efficient, scalable solutions and dedicated to delivering high-quality user experiences."',
       name: 'aboutScreenDesc1',
       desc: '',
       args: [],
     );
   }
 
-  /// `''With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.''`
+  /// `"With over 4 years of experience as a professional Flutter and iOS application developer, I have gained the expertise and technical skills needed to build robust, user-friendly applications that drive success."`
   String get aboutScreenDesc2 {
     return Intl.message(
-      '\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'',
+      '"With over 4 years of experience as a professional Flutter and iOS application developer, I have gained the expertise and technical skills needed to build robust, user-friendly applications that drive success."',
       name: 'aboutScreenDesc2',
       desc: '',
       args: [],
     );
   }
 
-  /// `“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”`
+  /// `"Driven by innovation and a passion for crafting seamless digital experiences, I believe in building applications that not only meet client needs but exceed user expectations. With a strong foundation in Flutter and iOS development, I strive to deliver solutions that are both efficient and impactful."`
   String get aboutScreenDesc3 {
     return Intl.message(
-      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”',
+      '"Driven by innovation and a passion for crafting seamless digital experiences, I believe in building applications that not only meet client needs but exceed user expectations. With a strong foundation in Flutter and iOS development, I strive to deliver solutions that are both efficient and impactful."',
       name: 'aboutScreenDesc3',
       desc: '',
       args: [],
@@ -135,6 +135,16 @@ class S {
     return Intl.message(
       'BLOGS',
       name: 'blogs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click to know more`
+  String get clickToKnowMore {
+    return Intl.message(
+      'Click to know more',
+      name: 'clickToKnowMore',
       desc: '',
       args: [],
     );
@@ -210,6 +220,16 @@ class S {
     );
   }
 
+  /// `Email cannot be empty`
+  String get emailCannotBeEmpty {
+    return Intl.message(
+      'Email cannot be empty',
+      name: 'emailCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Expand`
   String get expand {
     return Intl.message(
@@ -225,6 +245,16 @@ class S {
     return Intl.message(
       'Experience',
       name: 'experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get genericErrorMessage {
+    return Intl.message(
+      'Something went wrong',
+      name: 'genericErrorMessage',
       desc: '',
       args: [],
     );
@@ -270,6 +300,26 @@ class S {
     );
   }
 
+  /// `Load more`
+  String get loadMore {
+    return Intl.message(
+      'Load more',
+      name: 'loadMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message cannot be empty`
+  String get messageCannotBeEmpty {
+    return Intl.message(
+      'Message cannot be empty',
+      name: 'messageCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Minimise`
   String get minimise {
     return Intl.message(
@@ -310,6 +360,16 @@ class S {
     );
   }
 
+  /// `Name cannot be empty`
+  String get nameCannotBeEmpty {
+    return Intl.message(
+      'Name cannot be empty',
+      name: 'nameCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Nice to meet you!`
   String get niceToMeetYou {
     return Intl.message(
@@ -335,6 +395,16 @@ class S {
     return Intl.message(
       'REACH OUT ME',
       name: 'reachOutMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `RECENT PROJECT`
+  String get recentProject {
+    return Intl.message(
+      'RECENT PROJECT',
+      name: 'recentProject',
       desc: '',
       args: [],
     );
@@ -400,6 +470,16 @@ class S {
     );
   }
 
+  /// `work`
+  String get work {
+    return Intl.message(
+      'work',
+      name: 'work',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `WORKS`
   String get works {
     return Intl.message(
@@ -420,61 +500,11 @@ class S {
     );
   }
 
-  /// `Name cannot be empty`
-  String get nameCannotBeEmpty {
+  /// `''With over 4 years of experience in Flutter and iOS development, I have successfully built and maintained a wide range of mobile and web applications. My expertise includes using Flutter SDK, Bloc architecture, and Firebase for backend integration. I’ve led the development of real-time communication features and innovative solutions, such as secure facial recognition for financial applications, always aiming to deliver efficient and user-friendly digital experiences.''`
+  String get withOver4YearsOfExperienceInFlutterAndIos {
     return Intl.message(
-      'Name cannot be empty',
-      name: 'nameCannotBeEmpty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Email cannot be empty`
-  String get emailCannotBeEmpty {
-    return Intl.message(
-      'Email cannot be empty',
-      name: 'emailCannotBeEmpty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Message cannot be empty`
-  String get messageCannotBeEmpty {
-    return Intl.message(
-      'Message cannot be empty',
-      name: 'messageCannotBeEmpty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Something went wrong`
-  String get genericErrorMessage {
-    return Intl.message(
-      'Something went wrong',
-      name: 'genericErrorMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `RECENT PROJECT`
-  String get recentProject {
-    return Intl.message(
-      'RECENT PROJECT',
-      name: 'recentProject',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `work`
-  String get work {
-    return Intl.message(
-      'work',
-      name: 'work',
+      '\'\'With over 4 years of experience in Flutter and iOS development, I have successfully built and maintained a wide range of mobile and web applications. My expertise includes using Flutter SDK, Bloc architecture, and Firebase for backend integration. I’ve led the development of real-time communication features and innovative solutions, such as secure facial recognition for financial applications, always aiming to deliver efficient and user-friendly digital experiences.\'\'',
+      name: 'withOver4YearsOfExperienceInFlutterAndIos',
       desc: '',
       args: [],
     );

@@ -13,7 +13,7 @@ final ThemeData lightTheme = ThemeData(
     surface: backgroundColor,
     primary: secondaryColor,
   ),
-  hoverColor: secondaryColor,
+  hoverColor: secondaryColor.withOpacity(0.1),
   inputDecorationTheme: InputDecorationTheme(
     contentPadding: EdgeInsets.zero,
     enabledBorder: const UnderlineInputBorder(
