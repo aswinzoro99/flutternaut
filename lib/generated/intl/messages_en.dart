@@ -24,11 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about": MessageLookupByLibrary.simpleMessage("ABOUT"),
         "aboutScreenDesc1": MessageLookupByLibrary.simpleMessage(
-            "\'\'Hello there! My name is Aswin Ranjith am a Software Engineer , and I\'m very passionate and dedicated to my work.\'\'"),
+            "\"Hello there! My name is Aswin Ranjith. I am a Flutter application developer with extensive experience in building mobile and web applications using Flutter SDK, Bloc architecture, and iOS development tools. I am passionate about crafting efficient, scalable solutions and dedicated to delivering high-quality user experiences.\""),
         "aboutScreenDesc2": MessageLookupByLibrary.simpleMessage(
-            "\'\'With 4+ years experience as a professional a app developer,I have acquired the skills and knowledge necessary to make your project a success.\'\'"),
+            "\"With over 4 years of experience as a professional Flutter and iOS application developer, I have gained the expertise and technical skills needed to build robust, user-friendly applications that drive success.\""),
         "aboutScreenDesc3": MessageLookupByLibrary.simpleMessage(
-            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”"),
+            "\"Driven by innovation and a passion for crafting seamless digital experiences, I believe in building applications that not only meet client needs but exceed user expectations. With a strong foundation in Flutter and iOS development, I strive to deliver solutions that are both efficient and impactful.\""),
         "anyProject": MessageLookupByLibrary.simpleMessage("ANY PROJECT?"),
         "aswinRanjith":
             MessageLookupByLibrary.simpleMessage("ASWIN RANJITH..."),
@@ -84,6 +84,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "underDevelopment":
             MessageLookupByLibrary.simpleMessage("Under Development"),
         "welcomeTo": MessageLookupByLibrary.simpleMessage("WELCOME TO..."),
+        "withOver4YearsOfExperienceInFlutterAndIos":
+            MessageLookupByLibrary.simpleMessage(
+                "\'\'With over 4 years of experience in Flutter and iOS development, I have successfully built and maintained a wide range of mobile and web applications. My expertise includes using Flutter SDK, Bloc architecture, and Firebase for backend integration. I’ve led the development of real-time communication features and innovative solutions, such as secure facial recognition for financial applications, always aiming to deliver efficient and user-friendly digital experiences.\'\'"),
         "work": MessageLookupByLibrary.simpleMessage("work"),
         "works": MessageLookupByLibrary.simpleMessage("WORKS"),
         "yearsExperience":
