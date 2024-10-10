@@ -1,10 +1,9 @@
-import 'package:animations/animations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternaut_frontend_webapp/common/base_screen.dart';
 import 'package:flutternaut_frontend_webapp/extensions/context_extensions.dart';
-import 'package:flutternaut_frontend_webapp/presentation/pages/works_screen/work_details_widget.dart';
 import 'package:flutternaut_frontend_webapp/utils/assets.dart';
+import 'package:universal_html/html.dart' as html;
 
 import '../../../common/config.dart';
 import '../../../common/dimensions.dart';
@@ -61,48 +60,48 @@ class _WorksScreenState extends BaseState<WorksScreen> {
     );
   }
 
-  OpenContainer<Never> buildGridViewItem(BuildContext context, int index) {
+  InkWell buildGridViewItem(BuildContext context, int index) {
     final work = Config.workList[index];
 
-    return OpenContainer(
-      tappable: false,
-      closedBuilder: (context, action) {
-        return Padding(
-          padding: EdgeInsets.all(bodyPadding),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      work.minorDescription,
-                      style: context.textTheme.bodySmall,
-                    ),
-                    SizedBox(height: paddingMedium1),
-                    Text(
-                      work.projectName,
-                      style: context.textTheme.headlineMedium
-                          ?.copyWith(fontWeight: FontWeight.w500),
-                      maxLines: 3,
-                    ),
-                    const Spacer(),
-                    Image.asset(
-                      Assets.northEastClear,
-                      height: iconSizeXXL,
-                    ),
-                  ],
-                ),
-              ),
-              Image.asset(work.assetPath, height: 190),
-            ],
-          ),
+    return InkWell(
+      onTap: () {
+        html.window.open(
+          work.projectUrl,
+          "blank",
         );
       },
-      openBuilder: (context, action) {
-        return WorkDetailsScreen(workItem: work);
-      },
+      child: Padding(
+        padding: EdgeInsets.all(bodyPadding),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    work.minorDescription,
+                    style: context.textTheme.bodySmall,
+                  ),
+                  SizedBox(height: paddingMedium1),
+                  Text(
+                    work.projectName,
+                    style: context.textTheme.headlineMedium
+                        ?.copyWith(fontWeight: FontWeight.w500),
+                    maxLines: 3,
+                  ),
+                  const Spacer(),
+                  Image.asset(
+                    Assets.northEastClear,
+                    height: iconSizeXXL,
+                  ),
+                ],
+              ),
+            ),
+            Image.asset(work.assetPath, height: 190),
+          ],
+        ),
+      ),
     );
   }
 }
