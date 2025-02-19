@@ -69,22 +69,22 @@ class Config {
       details:
           '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
     ),
-    Work(
-      projectName: 'CubePlus by Tradejini',
-      minorDescription: 'Trading app',
-      assetPath: Assets.work2,
-      projectUrl:
-          'https://play.google.com/store/apps/details?id=com.nxtrad.cubeplus&hl=en_IN',
-      details:
-          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
-    ),
-    Work(
-      projectName: 'e-KYC by Tradejini',
-      minorDescription: 'Onboarding app',
-      assetPath: Assets.work3,
-      projectUrl: 'https://ekyc.tradejini.com/#/onboarding',
-      details:
-          '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
-    ),
+    // Work(
+    //   projectName: 'CubePlus by Tradejini',
+    //   minorDescription: 'Trading app',
+    //   assetPath: Assets.work2,
+    //   projectUrl:
+    //       'https://play.google.com/store/apps/details?id=com.nxtrad.cubeplus&hl=en_IN',
+    //   details:
+    //       '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+    // ),
+    // Work(
+    //   projectName: 'e-KYC by Tradejini',
+    //   minorDescription: 'Onboarding app',
+    //   assetPath: Assets.work3,
+    //   projectUrl: 'https://ekyc.tradejini.com/#/onboarding',
+    //   details:
+    //       '''You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a templateYou can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template,You can customize a template or make your own from scratch,with an immersive library at your disposal. You can customize a template''',
+    // ),
   ];
 }
