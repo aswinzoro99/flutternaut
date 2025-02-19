@@ -21,7 +21,7 @@ jobs:
   
     - run: flutter pub get
     
-    - run: flutter build web --wasm --release
+    - run: flutter build web --release
     
   deploy:
     needs: build
