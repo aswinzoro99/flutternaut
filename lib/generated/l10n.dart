@@ -18,17 +18,20 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -52,12 +57,7 @@ class S {
 
   /// `ABOUT`
   String get about {
-    return Intl.message(
-      'ABOUT',
-      name: 'about',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('ABOUT', name: 'about', desc: '', args: []);
   }
 
   /// `"Hello there! My name is Aswin Ranjith. I am a Flutter application developer with extensive experience in building mobile and web applications using Flutter SDK, Bloc architecture, and iOS development tools. I am passionate about crafting efficient, scalable solutions and dedicated to delivering high-quality user experiences."`
@@ -92,12 +92,7 @@ class S {
 
   /// `ANY PROJECT?`
   String get anyProject {
-    return Intl.message(
-      'ANY PROJECT?',
-      name: 'anyProject',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('ANY PROJECT?', name: 'anyProject', desc: '', args: []);
   }
 
   /// `ASWIN RANJITH...`
@@ -122,22 +117,12 @@ class S {
 
   /// `based in`
   String get basedIn {
-    return Intl.message(
-      'based in',
-      name: 'basedIn',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('based in', name: 'basedIn', desc: '', args: []);
   }
 
   /// `BLOGS`
   String get blogs {
-    return Intl.message(
-      'BLOGS',
-      name: 'blogs',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('BLOGS', name: 'blogs', desc: '', args: []);
   }
 
   /// `Click to know more`
@@ -162,12 +147,7 @@ class S {
 
   /// `CONTACT`
   String get contact {
-    return Intl.message(
-      'CONTACT',
-      name: 'contact',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('CONTACT', name: 'contact', desc: '', args: []);
   }
 
   /// `Copied to clipboard`
@@ -182,12 +162,7 @@ class S {
 
   /// `Copy`
   String get copy {
-    return Intl.message(
-      'Copy',
-      name: 'copy',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Copy', name: 'copy', desc: '', args: []);
   }
 
   /// `Copyright ©2023 Aswin Ranjith. All right reserved.`
@@ -202,12 +177,7 @@ class S {
 
   /// `Download CV`
   String get downloadCv {
-    return Intl.message(
-      'Download CV',
-      name: 'downloadCv',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Download CV', name: 'downloadCv', desc: '', args: []);
   }
 
   /// `Download my resume`
@@ -232,22 +202,12 @@ class S {
 
   /// `Expand`
   String get expand {
-    return Intl.message(
-      'Expand',
-      name: 'expand',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Expand', name: 'expand', desc: '', args: []);
   }
 
   /// `Experience`
   String get experience {
-    return Intl.message(
-      'Experience',
-      name: 'experience',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Experience', name: 'experience', desc: '', args: []);
   }
 
   /// `Something went wrong`
@@ -262,32 +222,17 @@ class S {
 
   /// `HOME`
   String get home {
-    return Intl.message(
-      'HOME',
-      name: 'home',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('HOME', name: 'home', desc: '', args: []);
   }
 
   /// `Aswin.`
   String get homeScreenTitle {
-    return Intl.message(
-      'Aswin.',
-      name: 'homeScreenTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Aswin.', name: 'homeScreenTitle', desc: '', args: []);
   }
 
   /// `India`
   String get india {
-    return Intl.message(
-      'India',
-      name: 'india',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('India', name: 'india', desc: '', args: []);
   }
 
   /// `Let’s talk with me`
@@ -302,12 +247,7 @@ class S {
 
   /// `Load more`
   String get loadMore {
-    return Intl.message(
-      'Load more',
-      name: 'loadMore',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Load more', name: 'loadMore', desc: '', args: []);
   }
 
   /// `Message cannot be empty`
@@ -322,12 +262,7 @@ class S {
 
   /// `Minimise`
   String get minimise {
-    return Intl.message(
-      'Minimise',
-      name: 'minimise',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Minimise', name: 'minimise', desc: '', args: []);
   }
 
   /// `MY EXPERIENCE`
@@ -342,12 +277,7 @@ class S {
 
   /// `MY NAME IS`
   String get myNameIs {
-    return Intl.message(
-      'MY NAME IS',
-      name: 'myNameIs',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('MY NAME IS', name: 'myNameIs', desc: '', args: []);
   }
 
   /// `MY SPECIALITIES`
@@ -392,12 +322,7 @@ class S {
 
   /// `REACH OUT ME`
   String get reachOutMe {
-    return Intl.message(
-      'REACH OUT ME',
-      name: 'reachOutMe',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('REACH OUT ME', name: 'reachOutMe', desc: '', args: []);
   }
 
   /// `RECENT PROJECT`
@@ -422,12 +347,7 @@ class S {
 
   /// `SERVICES`
   String get services {
-    return Intl.message(
-      'SERVICES',
-      name: 'services',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('SERVICES', name: 'services', desc: '', args: []);
   }
 
   /// `Software Engineer`
@@ -442,12 +362,7 @@ class S {
 
   /// `Submit now`
   String get submitNow {
-    return Intl.message(
-      'Submit now',
-      name: 'submitNow',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Submit now', name: 'submitNow', desc: '', args: []);
   }
 
   /// `Under Development`
@@ -462,32 +377,17 @@ class S {
 
   /// `WELCOME TO...`
   String get welcomeTo {
-    return Intl.message(
-      'WELCOME TO...',
-      name: 'welcomeTo',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('WELCOME TO...', name: 'welcomeTo', desc: '', args: []);
   }
 
   /// `work`
   String get work {
-    return Intl.message(
-      'work',
-      name: 'work',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('work', name: 'work', desc: '', args: []);
   }
 
   /// `WORKS`
   String get works {
-    return Intl.message(
-      'WORKS',
-      name: 'works',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('WORKS', name: 'works', desc: '', args: []);
   }
 
   /// `Years experience...`
@@ -515,9 +415,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override
